@@ -10,7 +10,7 @@ import { AppService } from '../shared/service/app.service';
 })
 export class HomeComponent implements OnInit {
 
-  formDate: any = new Date();
+  fromDate: any = new Date();
   data: any = [];
   key: string = 'slNo'; //set default
   reverse: boolean = false;
