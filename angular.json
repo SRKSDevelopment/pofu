@@ -3,38 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pofu": {
+    "accelerate-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
-      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pofu",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
+            "polyfills": "src/polyfills.ts",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/css/styles.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/jspdf/dist/jspdf.min.js"
+            ]
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -43,41 +42,60 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "pofu:build"
+            "browserTarget": "accelerate-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "pofu:build:production"
+              "browserTarget": "accelerate-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pofu:build"
+            "browserTarget": "accelerate-app:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
+            "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.css"
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/chart.js/dist/Chart.bundle.min.js",
+              "node_modules/jspdf/dist/jspdf.min.js",
+              "node_modules/html2canvas/dist/html2canvas.min.js"
             ],
-            "scripts": [],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/css/styles.css",
+              "src/css/responsive-style.css",
+              "src/css/new-bootstrap.css",
+              "src/css/table.css",
+              "src/css/fullcalender.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/font-awesome/css/font-awesome.css"
+            ],
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/favicon.ico"
             ]
           }
         },
@@ -95,26 +113,24 @@
         }
       }
     },
-    "pofu-e2e": {
-      "root": "e2e/",
+    "accelerate-app-e2e": {
+      "root": "e2e",
+      "sourceRoot": "e2e",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "pofu:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "pofu:serve:production"
-            }
+            "protractorConfig": "./protractor.conf.js",
+            "devServerTarget": "accelerate-app:serve"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]
@@ -123,5 +139,14 @@
       }
     }
   },
-  "defaultProject": "pofu"
+  "defaultProject": "accelerate-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "styleext": "css"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  }
 }

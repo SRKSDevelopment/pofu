@@ -1,0 +1,563 @@
+<div class="container-fluid">
+    <div class="row">
+        <div
+            class="col-sm-2 form-horizontal"
+            style="padding: 0;"
+        >
+            <div
+                class="card"
+                style="height: 518px;"
+            >
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-sm-3">From</label>
+                        <div
+                            class="col-sm-6"
+                            style="padding: 0;"
+                        >
+                            <div class="input-group date">
+                                <input
+                                    #dp="bsDatepicker"
+                                    bsDatepicker
+                                    [(ngModel)]="fromDate"
+                                    class="filter-date text-center"
+                                    [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY'}"
+                                >
+                                <!-- <span class="input-group-btn add-on-entity">
+                                <button
+                                    class="btn btn-primary"
+                                    (click)="dp.toggle()"
+                                    type="button"
+                                >
+    
+                                </button>
+                            </span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="control-label col-sm-3">To</label>
+                        <div
+                            class="col-sm-6"
+                            style="padding: 0;"
+                        >
+                            <div class="input-group date">
+                                <input
+                                    #dp="bsDatepicker"
+                                    bsDatepicker
+                                    [(ngModel)]="fromDate"
+                                    class="filter-date text-center"
+                                    [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY'}"
+                                >
+                                <!-- <span class="input-group-btn add-on-entity">
+                                <button
+                                    class="btn btn-primary"
+                                    (click)="dp.toggle()"
+                                    type="button"
+                                >
+    
+                                </button>
+                            </span> -->
+                            </div>
+                        </div>
+                        <div class="col-sm-1">
+                            <button class="search-btn btn">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                        <!-- <div class="col-sm-1">
+                            <button class="search-btn btn"><i class="fa fa-search"></i></button>
+                        </div> -->
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <span class="cstatus">Call Status:</span>
+                        </div>
+                        <div class="col-sm-12">
+                            <div
+                                class="btn-group btn-group-vertical"
+                                data-toggle="buttons"
+                            >
+                                <label class="btn active">
+                                    <input
+                                        type="radio"
+                                        name="gender1"
+                                        checked
+                                    >
+                                    <i class="fa fa-circle-o"></i>
+                                    <i class="fa fa-dot-circle-o"></i>
+                                    <span>Pending</span>
+                                </label>
+                                <label class="btn">
+                                    <input
+                                        type="radio"
+                                        name="gender1"
+                                    >
+                                    <i class="fa fa-circle-o"></i>
+                                    <i class="fa fa-dot-circle-o"></i>
+                                    <span>Connect Later</span>
+                                </label>
+                                <label class="btn">
+                                    <input
+                                        type="radio"
+                                        name="gender1"
+                                    >
+                                    <i class="fa fa-circle-o"></i>
+                                    <i class="fa fa-dot-circle-o"></i>
+                                    <span>No Response</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="row"
+                        style="padding-top: 10px;"
+                    >
+                        <div class="col-sm-12">
+                            <div class="input-group add-on">
+                                <input
+                                    class="form-control"
+                                    placeholder="Search Name, Phone Number"
+                                    name="srch-term"
+                                    id="srch-term"
+                                    type="text"
+                                >
+                                <div class="input-group-btn">
+                                    <button
+                                        class="btn btn-default"
+                                        type="submit"
+                                    >
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="col-sm-8"
+            style="padding: 0 4px;"
+        >
+            <div class="card-center-border">
+                <div class="card-center">
+                    <div class="table-responsive tabley-responsive">
+                        <input
+                            id="searchinput"
+                            type="search"
+                            class="table-input form-control"
+                            placeholder="SEARCH"
+                            [(ngModel)]="iFilter"
+                        >
+                        <table
+                            id="myTable"
+                            class="table table-bordered table-striped"
+                        >
+                            <thead>
+                                <tr>
+                                    <th (click)="sort('slNo')">
+                                        <span class="drill-header">Sl No.</span>
+                                        <span
+                                            *ngIf="key !='slNo'"
+                                            class="glyphicon glyphicon-chevron-down"
+                                        ></span>
+                                        <span
+                                            class="glyphicon sort-icon"
+                                            *ngIf="key =='slNo'"
+                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
+                                        ></span>
+                                    </th>
+                                    <th (click)="sort('name')">
+                                        <span class="drill-header">Name</span>
+                                        <span
+                                            *ngIf="key !='name'"
+                                            class="glyphicon glyphicon-chevron-down"
+                                        ></span>
+                                        <span
+                                            class="glyphicon sort-icon"
+                                            *ngIf="key =='name'"
+                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
+                                        ></span>
+                                    </th>
+                                    <th (click)="sort('lob')">
+                                        <span class="drill-header">LOB</span>
+                                        <span
+                                            *ngIf="key !='lob'"
+                                            class="glyphicon glyphicon-chevron-down"
+                                        ></span>
+                                        <span
+                                            class="glyphicon sort-icon"
+                                            *ngIf="key =='lob'"
+                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
+                                        ></span>
+                                    </th>
+                                    <th (click)="sort('email')">
+                                        <span class="drill-header">Email</span>
+                                        <span
+                                            *ngIf="key !='email'"
+                                            class="glyphicon glyphicon-chevron-down"
+                                        ></span>
+                                        <span
+                                            class="glyphicon sort-icon"
+                                            *ngIf="key =='email'"
+                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
+                                        ></span>
+                                    </th>
+                                    <th (click)="sort('phone')">
+                                        <span class="drill-header">Phone</span>
+                                        <span
+                                            *ngIf="key !='phone'"
+                                            class="glyphicon glyphicon-chevron-down"
+                                        ></span>
+                                        <span
+                                            class="glyphicon sort-icon"
+                                            *ngIf="key =='phone'"
+                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
+                                        ></span>
+                                    </th>
+                                    <th (click)="sort('stage')">
+                                        <span class="drill-header">Stage</span>
+                                        <span
+                                            *ngIf="key !='stage'"
+                                            class="glyphicon glyphicon-chevron-down"
+                                        ></span>
+                                        <span
+                                            class="glyphicon sort-icon"
+                                            *ngIf="key =='stage'"
+                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
+                                        ></span>
+                                    </th>
+                                    <th (click)="sort('status')">
+                                        <span class="drill-header">Call Status</span>
+                                        <span
+                                            *ngIf="key !='status'"
+                                            class="glyphicon glyphicon-chevron-down"
+                                        ></span>
+                                        <span
+                                            class="glyphicon sort-icon"
+                                            *ngIf="key =='status'"
+                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
+                                        ></span>
+                                    </th>
+                                    <!-- <th>Name</th>
+                                    <th>LOB</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Stage</th>
+                                    <th>Call Status</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of data | filter : ['slNo' ,'name','email','phone','stage','status']: iFilter |  orderBy: key : reverse | paginate: { itemsPerPage: [number], currentPage: p }">
+                                    <td>{{item.slNo}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.lob}}</td>
+                                    <td>{{item.email}}</td>
+                                    <td>{{item.phone}}</td>
+                                    <td>{{item.stage}}</td>
+                                    <td>{{item.status}}</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <div class="pull-left"></div>
+                        <pagination-controls
+                            (pageChange)="pageChanged($event)"
+                            class="pull-right"
+                        ></pagination-controls>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div
+                    class="card-center"
+                    style="margin: -9px 0 0px;"
+                >
+                    <div class="table-responsive">
+                        <table
+                            id="myTable1"
+                            class="table table-bordered table-striped"
+                        >
+                            <thead>
+                                <tr>
+                                    <th>Stage</th>
+                                    <th>Date</th>
+                                    <th>POFU Status</th>
+                                    <th>Updated By</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>S1</td>
+                                    <td>12-Jul-2018</td>
+                                    <td>Pending</td>
+                                    <td>Sanket</td>
+                                    <td>
+                                        <ul class="valign">
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/telephone1.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/calendar3.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/smartphone.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/chat.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>S2</td>
+                                    <td>20-Jul-2018</td>
+                                    <td>No Respnse</td>
+                                    <td>Sanket</td>
+                                    <td>
+                                        <ul class="valign">
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/telephone1.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/calendar3.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/smartphone.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/chat.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>S3</td>
+                                    <td>22-Jul-2018</td>
+                                    <td>Connect Later</td>
+                                    <td>Sanket</td>
+                                    <td>
+                                        <ul class="valign">
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/telephone1.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/calendar3.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/smartphone.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/chat.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>S4</td>
+                                    <td>30-Jul-2018</td>
+                                    <td>Complete</td>
+                                    <td>Sanket</td>
+                                    <td>
+                                        <ul class="valign">
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/telephone1.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/calendar3.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li action-bor">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/smartphone.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                            <li class="action-li">
+                                                <button
+                                                    _ngcontent-c5
+                                                    class="btn btn-ini"
+                                                    tooltip="Call"
+                                                >
+                                                    <img
+                                                        class="action-btn"
+                                                        src="./assets/chat.png"
+                                                    >
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="col-sm-2"
+            style="padding: 0;"
+        >
+            <div
+                class="card"
+                style="height: 518px;"
+            >
+                <div class="card-title">
+                    <h4>Candidate Offer Details</h4>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="cstatus">Previous Salary: 50,000</span>
+                    </div>
+                    <div class="col-sm-12">
+                        <span class="cstatus">Current Offered: 70,000</span>
+                    </div>
+                    <div class="col-sm-12">
+                        <span class="cstatus">Experience: 4years</span>
+                    </div>
+                    <div class="col-sm-12">
+                        <span class="cstatus">Location: Bangalore</span>
+                    </div>
+                    <div class="col-sm-12">
+                        <span class="cstatus">Tier: 3</span>
+                    </div>
+                    <div class="col-sm-12">
+                        <span class="cstatus">Tier: 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

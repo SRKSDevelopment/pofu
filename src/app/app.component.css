@@ -1,0 +1,38 @@
+alert{
+    position: fixed;
+    top: auto;
+    right: 38%;
+    bottom: 19px;
+    left: 33%;
+    width: 40%;
+    text-align: center;
+}
+router-outlet{
+    display: none;
+}
+.route-container {
+    position:relative;
+}
+.route-container>* {
+    display:block;
+}
+.active {
+    color:black !important;
+    background-color:#F7A500;
+    border-radius: 6px;
+  }
+ .active:hover {
+    box-shadow: 0 4px 8px 0 #ccc;
+}
+.doc-box-li input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  .doc-box-li {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }

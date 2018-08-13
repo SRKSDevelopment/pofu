@@ -1,20 +1,60 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="fix-header fix-sidebar">
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <b><img src="./assets/logo.png" alt="homepage" class="dark-logo" /></b>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav mr-auto mt-md-0"></ul>
+                    <ul class="navbar-nav my-lg-0">
+                       
+                        <li class="nav-item">
+                            <img src="./assets/scalene-logo.png" style="width: 130px;">
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="page-wrapper">
+            <div class="row page-titles">
+                <div class="navbar top-navbar navbar-expand-md navbar-light" style="padding: 4px 10px 0px;">
+                    <div class="navbar-collapse">
+                        <ul class="navbar-nav">
+                            <li class="action-li">
+                                <h5 class="text-primary menu-font">Home</h5> 
+                            </li>
+                            <li class="action-li">
+                                <h5 class="text-primary menu-font">Admin</h5> 
+                            </li>
+                            <!-- <li class="action-li nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h5 class="text-primary menu-font">Admin</h5></a>
+                                <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                                    <ul class="dropdown-user">
+                                        <li><a href="#"><i class="ti-user"></i> Profile</a></li>
+                                        <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
+                                        <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+                                        <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
+                                        <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    </ul>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <router-outlet #outlet="outlet"></router-outlet>
+        </div>
+        <footer>
+            <div class="footerr">
+                <p>©&nbsp;Scalene Works</p>
+            </div>
+        </footer>
+    </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<!--  -->
