@@ -19,7 +19,7 @@
   },
  
   "compilerOptions": {
-    "baseUrl": "",
+    "baseUrl": "src/", "paths": { "agc": [ "../dist/agc" ], "agc/*": [ "../dist/agc/*" ] },
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
