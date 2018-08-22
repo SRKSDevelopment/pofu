@@ -4,8 +4,8 @@
             class="col-sm-2 form-horizontal"
             style="padding: 0;"
         >
-        <!-- <input type="file" style="display: inline-block;" (change)="incomingfile($event)" placeholder="Upload file" accept=".xlsx">
-        <button type="button" class="btn btn-info" (click)="Upload()" >Upload</button> -->
+        <input type="file" style="display: inline-block;" (change)="incomingfile($event)" placeholder="Upload file" accept=".xlsx">
+        <button type="button" class="btn btn-info" (click)="Upload()" >Upload</button>
         
             <div
                 class="card"
@@ -14,53 +14,30 @@
                 <div class="form-group">
                     <div class="row">
                         <label class="control-label col-sm-3">From</label>
-                        <div
-                            class="col-sm-6"
-                            style="padding: 0;"
-                        >
+                        <div class="col-sm-6" style="padding: 0;">
                             <div class="input-group date">
                                 <input
                                     #dp="bsDatepicker"
                                     bsDatepicker
                                     [(ngModel)]="fromDate"
-                                    class="filter-date text-center"
+                                    class="form-control filter-date text-center"
+                                    style="padding: 0;"
                                     [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY'}"
                                 >
-                                <!-- <span class="input-group-btn add-on-entity">
-                                <button
-                                    class="btn btn-primary"
-                                    (click)="dp.toggle()"
-                                    type="button"
-                                >
-    
-                                </button>
-                            </span> -->
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <label class="control-label col-sm-3">To</label>
-                        <div
-                            class="col-sm-6"
-                            style="padding: 0;"
-                        >
+                        <div class="col-sm-6" style="padding: 0;">
                             <div class="input-group date">
                                 <input
                                     #dp="bsDatepicker"
                                     bsDatepicker
                                     [(ngModel)]="fromDate"
-                                    class="filter-date text-center"
+                                    class="form-control filter-date text-center"
                                     [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY'}"
                                 >
-                                <!-- <span class="input-group-btn add-on-entity">
-                                <button
-                                    class="btn btn-primary"
-                                    (click)="dp.toggle()"
-                                    type="button"
-                                >
-    
-                                </button>
-                            </span> -->
                             </div>
                         </div>
                         <div class="col-sm-1">
@@ -159,100 +136,231 @@
                         >
                             <thead>
                                 <tr>
-                                    <th (click)="sort('slNo')">
-                                        <span class="drill-header">Sl No.</span>
-                                        <span
-                                            *ngIf="key !='slNo'"
-                                            class="glyphicon glyphicon-chevron-down"
-                                        ></span>
-                                        <span
-                                            class="glyphicon sort-icon"
-                                            *ngIf="key =='slNo'"
-                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
-                                        ></span>
-                                    </th>
-                                    <th (click)="sort('name')">
-                                        <span class="drill-header">Name</span>
-                                        <span
-                                            *ngIf="key !='name'"
-                                            class="glyphicon glyphicon-chevron-down"
-                                        ></span>
-                                        <span
-                                            class="glyphicon sort-icon"
-                                            *ngIf="key =='name'"
-                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
-                                        ></span>
-                                    </th>
-                                    <th (click)="sort('lob')">
-                                        <span class="drill-header">LOB</span>
-                                        <span
-                                            *ngIf="key !='lob'"
-                                            class="glyphicon glyphicon-chevron-down"
-                                        ></span>
-                                        <span
-                                            class="glyphicon sort-icon"
-                                            *ngIf="key =='lob'"
-                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
-                                        ></span>
-                                    </th>
-                                    <th (click)="sort('email')">
-                                        <span class="drill-header">Email</span>
-                                        <span
-                                            *ngIf="key !='email'"
-                                            class="glyphicon glyphicon-chevron-down"
-                                        ></span>
-                                        <span
-                                            class="glyphicon sort-icon"
-                                            *ngIf="key =='email'"
-                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
-                                        ></span>
-                                    </th>
-                                    <th (click)="sort('phone')">
-                                        <span class="drill-header">Phone</span>
-                                        <span
-                                            *ngIf="key !='phone'"
-                                            class="glyphicon glyphicon-chevron-down"
-                                        ></span>
-                                        <span
-                                            class="glyphicon sort-icon"
-                                            *ngIf="key =='phone'"
-                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
-                                        ></span>
-                                    </th>
-                                    <th (click)="sort('stage')">
-                                        <span class="drill-header">Stage</span>
-                                        <span
-                                            *ngIf="key !='stage'"
-                                            class="glyphicon glyphicon-chevron-down"
-                                        ></span>
-                                        <span
-                                            class="glyphicon sort-icon"
-                                            *ngIf="key =='stage'"
-                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
-                                        ></span>
-                                    </th>
-                                    <th (click)="sort('status')">
-                                        <span class="drill-header">Call Status</span>
-                                        <span
-                                            *ngIf="key !='status'"
-                                            class="glyphicon glyphicon-chevron-down"
-                                        ></span>
-                                        <span
-                                            class="glyphicon sort-icon"
-                                            *ngIf="key =='status'"
-                                            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"
-                                        ></span>
-                                    </th>
-                                    <!-- <th>Name</th>
-                                    <th>LOB</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Stage</th>
-                                    <th>Call Status</th> -->
+                                    <th (click)="sort('taggedLOB')"><span class="drill-header">Tagged LOB</span><span *ngIf="key !='taggedLOB'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='taggedLOB'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('CVID')"><span class="drill-header">CV ID</span><span *ngIf="key !='CVID'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='CVID'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('firstName')"><span class="drill-header" tooltip="First Name">FN</span><span *ngIf="key !='firstName'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='firstName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('middleName')"><span class="drill-header" tooltip="Middle Name">MN</span><span *ngIf="key !='middleName'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='middleName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('lastName')"><span class="drill-header" tooltip="Last Name">LN</span><span *ngIf="key !='lastName'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='lastName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('offerDateIST')"><span class="drill-header" tooltip="Offer Date">OD</span><span *ngIf="key !='offerDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='offerDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('offerAcceptDateIST')"><span class="drill-header" tooltip="Offer Accept Date">OAD</span><span *ngIf="key !='offerAcceptDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='offerAcceptDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('expectedJoiningDateist')"><span class="drill-header" tooltip="Expected Joining Date">EJD</span><span *ngIf="key !='expectedJoiningDateist'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='expectedJoiningDateist'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('expectedJoiningMonth')"><span class="drill-header" tooltip="Expected Joining Month">EJM</span><span *ngIf="key !='expectedJoiningMonth'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='expectedJoiningMonth'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('fulfillmentMonth')"><span class="drill-header">Fulfillment Month</span><span *ngIf="key !='fulfillmentMonth'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='FulfillmentMonth'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('targetFulfillmentRoundUp')"><span class="drill-header">Target Fulfillment RoundUp</span><span *ngIf="key !='targetFulfillmentRoundUp'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='targetFulfillmentRoundUp'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('actualJoiningDateIST')"><span class="drill-header">Actual JoiningDate IST</span><span *ngIf="key !='actualJoiningDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='actualJoiningDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('sapCode')"><span class="drill-header">SAP Code</span><span *ngIf="key !='sapCode'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='sapCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('source')"><span class="drill-header">Source</span><span *ngIf="key !='source'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='source'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('sourceDetails')"><span class="drill-header">Source Details</span><span *ngIf="key !='sourceDetails'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='sourceDetails'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('agencyCode')"><span class="drill-header">Agency Code</span><span *ngIf="key !='agencyCode'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='agencyCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('agencyName')"><span class="drill-header">Agency Name</span><span *ngIf="key !='agencyName'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='agencyName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('sourceMailID')"><span class="drill-header">Source MailID</span><span *ngIf="key !='sourceMailID'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='sourceMailID'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('emailAddress')"><span class="drill-header">Email Address</span><span *ngIf="key !='emailAddress'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='emailAddress'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('contactNumber')"><span class="drill-header">ContactNumber</span><span *ngIf="key !='contactNumber'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='contactNumber'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('country')"><span class="drill-header">Country</span><span *ngIf="key !='country'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='country'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('nationality')"><span class="drill-header">Nationality</span><span *ngIf="key !='nationality'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='nationality'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('gender')"><span class="drill-header">Gender</span><span *ngIf="key !='gender'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='gender'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('TEX')"><span class="drill-header">TEX</span><span *ngIf="key !='TEX'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='TEX'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('REX')"><span class="drill-header">REX</span><span *ngIf="key !='REX'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='REX'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('previousOrganizationName')"><span class="drill-header">Previous Organization Name</span><span *ngIf="key !='previousOrganizationName'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='previousOrganizationName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('job')"><span class="drill-header">Job</span><span *ngIf="key !='job'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='job'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('jobFamily')"><span class="drill-header">Job Family</span><span *ngIf="key !='jobFamily'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='jobFamily'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('primarySkill')"><span class="drill-header">Primary Skill</span><span *ngIf="key !='primarySkill'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='primarySkill'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('secondarySkill')"><span class="drill-header">Secondary Skill</span><span *ngIf="key !='secondarySkill'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='secondarySkill'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('domainForInfra')"><span class="drill-header">Domain (For Infra)</span><span *ngIf="key !='domainForInfra'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='domainForInfra'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('subDomainForInfra')"><span class="drill-header">SubDomain (For Infra)</span><span *ngIf="key !='subDomainForInfra'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='subDomainForInfra'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('eBand')"><span class="drill-header">EBand</span><span *ngIf="key !='eBand'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='eBand'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('eSubBad')"><span class="drill-header">E Sub Bad</span><span *ngIf="key !='eSubBad'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='eSubBad'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('designation')"><span class="drill-header">Designation</span><span *ngIf="key !='designation'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='designation'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('designation2')"><span class="drill-header">Designation2</span><span *ngIf="key !='designation2'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='designation2'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('tLevel')"><span class="drill-header">T Level</span><span *ngIf="key !='tLevel'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='tLevel'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('joiningLocation')"><span class="drill-header">Joining Location</span><span *ngIf="key !='joiningLocation'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='joiningLocation'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('personalArea')"><span class="drill-header">Personal Area</span><span *ngIf="key !='personalArea'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='personalArea'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('personalSubArea')"><span class="drill-header">Personal Sub Area</span><span *ngIf="key !='personalSubArea'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='personalSubArea'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('joiningL1')"><span class="drill-header">Joining L1</span><span *ngIf="key !='joiningL1'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='joiningL1'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('joiningL2')"><span class="drill-header">Joining L2</span><span *ngIf="key !='joiningL2'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='joiningL2'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('joiningL3')"><span class="drill-header">Joining L3</span><span *ngIf="key !='joiningL3'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='joiningL3'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('joiningL4')"><span class="drill-header">Joining L4</span><span *ngIf="key !='joiningL4'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='joiningL4'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('employeeGroup')"><span class="drill-header">Employee Group</span><span *ngIf="key !='employeeGroup'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='employeeGroup'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('accountManager')"><span class="drill-header">Account Manager</span><span *ngIf="key !='accountManager'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='accountManager'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('billingDateIST')"><span class="drill-header">Billing Date IST</span><span *ngIf="key !='billingDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='billingDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('billingType')"><span class="drill-header">Billing Type</span><span *ngIf="key !='billingType'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='billingType'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('customerName')"><span class="drill-header">Customer Name</span><span *ngIf="key !='customerName'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='customerName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('projectName')"><span class="drill-header">Project Name</span><span *ngIf="key !='projectName'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='projectName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('expectedClosureDateIST')"><span class="drill-header">Expected ClosureDate IST</span><span *ngIf="key !='expectedClosureDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='expectedClosureDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('requisitionDateIST')"><span class="drill-header">Requisition Date IST</span><span *ngIf="key !='requisitionDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='requisitionDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('reportingManager')"><span class="drill-header">Reporting Manager</span><span *ngIf="key !='reportingManager'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='reportingManager'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('requisitionSource')"><span class="drill-header">Requisition Source</span><span *ngIf="key !='requisitionSource'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='requisitionSource'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('tagManager')"><span class="drill-header">TAGManager</span><span *ngIf="key !='tagManager'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='tagManager'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('recruiter')"><span class="drill-header">Recruiter</span><span *ngIf="key !='recruiter'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='recruiter'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('recruiter_Ack')"><span class="drill-header">Recruiter_Ack</span><span *ngIf="key !='recruiter_Ack'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='recruiter_Ack'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('canbehiredRehireNew')"><span class="drill-header">Canbehired Rehire New</span><span *ngIf="key !='canbehiredRehireNew'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='canbehiredRehireNew'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('tagExecutiveAssignDateIST')"><span class="drill-header">TAG Executive Assign DateIST</span><span *ngIf="key !='tagExecutiveAssignDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='tagExecutiveAssignDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('tagManagerAssignDateIST')"><span class="drill-header">TAG Manager Assign DateIST</span><span *ngIf="key !='tagManagerAssignDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='tagManagerAssignDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('srNumber')"><span class="drill-header">SR Number</span><span *ngIf="key !='srNumber'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='srNumber'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('autoreqID')"><span class="drill-header">Autoreq ID</span><span *ngIf="key !='autoreqID'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='autoreqID'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('srStatus')"><span class="drill-header">SR Status</span><span *ngIf="key !='srStatus'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='srStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('joiningStatus')"><span class="drill-header">Joining Status</span><span *ngIf="key !='joiningStatus'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='joiningStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('hrStatus')"><span class="drill-header">HR Status</span><span *ngIf="key !='hrStatus'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='hrStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('homephone')"><span class="drill-header">Home Phone</span><span *ngIf="key !='homephone'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='homephone'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('otherPhone')"><span class="drill-header">Other Phone</span><span *ngIf="key !='otherPhone'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='otherPhone'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('fullName')"><span class="drill-header">Full Name</span><span *ngIf="key !='fullName'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='fullName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('jobTitle')"><span class="drill-header">Job Title</span><span *ngIf="key !='jobTitle'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='jobTitle'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('department')"><span class="drill-header">Department</span><span *ngIf="key !='department'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='department'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('projectCode')"><span class="drill-header">Project Code</span><span *ngIf="key !='projectCode'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='projectCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('type')"><span class="drill-header">Type</span><span *ngIf="key !='type'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='type'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('trackDetail')"><span class="drill-header">Track Detail</span><span *ngIf="key !='trackDetail'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='trackDetail'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    
+                                    <th (click)="sort('pofuRAGStatus')"><span class="drill-header">POFU RAG Status</span><span *ngIf="key !='pofuRAGStatus'" class="glyphicon glyphicon-chevron-down"></span>
+                                    <span class="glyphicon sort-icon" *ngIf="key =='pofuRAGStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let item of data | filter : ['slNo' ,'name','email','phone','stage','status']: iFilter |  orderBy: key : reverse | paginate: { itemsPerPage: [number], currentPage: p }">
+                                <tr *ngFor="let item of data | filter : ['taggedLOB' ,'CVID','firstName','middleName','lastName','offerDateIST','offerAcceptDateIST','expectedJoiningDateist','expectedJoiningMonth','fulfillmentMonth','targetFulfillmentRoundUp','actualJoiningDateIST','sapCode','source','sourceDetails','agencyCode','agencyName','sourceMailID','emailAddress','contactNumber','country','nationality','gender','TEX','REX','previousOrganizationName','job','jobFamily','primarySkill','secondarySkill','domainForInfra','subDomainForInfra','eBand','eSubBad','designation','designation2','tLevel','joiningLocation','personalArea','personalSubArea','joiningL1','joiningL2','joiningL3','joiningL4','employeeGroup','accountManager','billingDateIST','billingType','customerName','projectName','expectedClosureDateIST','requisitionDateIST','reportingManager','requisitionSource','tagManager','recruiter','recruiter_Ack','canbehiredRehireNew','tagExecutiveAssignDateIST','tagManagerAssignDateIST','srNumber','autoreqID','srStatus','joiningStatus','hrStatus','homephone','otherPhone','fullName','jobTitle','department','projectCode','type','trackDetail','pofuRAGStatus']: iFilter |  orderBy: key : reverse | paginate: { itemsPerPage: [number], currentPage: p }">
                                     <td>{{item.slNo}}</td>
                                     <td>{{item.name}}</td>
                                     <td>{{item.lob}}</td>

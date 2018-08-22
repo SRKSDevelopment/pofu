@@ -1087,7 +1087,8 @@ h6.h1 {
 }
 .header .top-navbar {
   min-height: 50px;
-  padding: 0 15px 0 0;
+  padding: 0 0px 0 0;
+  margin-bottom: 0;
 }
 .header .top-navbar .dropdown-toggle:after {
   display: none;
@@ -1432,6 +1433,12 @@ textarea {
   color: #67757c;
   white-space: nowrap;
 }
+.navbar {
+  position: relative;
+  min-height: 27px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
 @media (min-width: 768px) {
   .navbar-header {
     width: 240px;
@@ -1468,6 +1475,10 @@ textarea {
     flex-wrap: nowrap !important;
     -webkit-flex-wrap: nowrap !important;
   }
+  .navbar {
+    border-radius: 4px;
+    margin-bottom: 0;
+}
 }
 @media (max-width: 767px) {
   .header {
@@ -6880,9 +6891,11 @@ div.dataTables_scrollBody thead {
 }
 .menu-font{
   text-transform: uppercase;
-  padding-right: 12px;
-  font-weight: 600;
-  font-size: 14px;
+    padding-right: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 23px;
+    margin: 0;
 }
 .nav-link {
     display: block;
@@ -7006,4 +7019,18 @@ box-shadow: none;
   border: 1px solid #0a5da3;
     margin: 16px 0 0px;
     border-radius: 5px;
+}
+.input-group .form-control{
+  position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 3px;
+    height: 29px;
+    border-radius: 6px!important;
+    box-shadow: none;
+    border-color: #e7e7e7;
+    font-family: 'Poppins', sans-serif;
+    padding: 6px 9px;
+    font-size: 12px;
 }
