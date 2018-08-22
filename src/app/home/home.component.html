@@ -1,16 +1,7 @@
 <div class="container-fluid">
     <div class="row">
-        <div
-            class="col-sm-2 form-horizontal"
-            style="padding: 0;"
-        >
-        <input type="file" style="display: inline-block;" (change)="incomingfile($event)" placeholder="Upload file" accept=".xlsx">
-        <button type="button" class="btn btn-info" (click)="Upload()" >Upload</button>
-        
-            <div
-                class="card"
-                style="height: 518px;"
-            >
+        <div class="col-sm-2 form-horizontal" style="padding: 0;">
+            <div class="card" style="height: 518px;">
                 <div class="form-group">
                     <div class="row">
                         <label class="control-label col-sm-3">From</label>
@@ -116,20 +107,17 @@
                 </div>
             </div>
         </div>
-        <div
-            class="col-sm-8"
-            style="padding: 0 4px;"
-        >
+        <div class="col-sm-8" style="padding: 0 4px;">
             <div class="card-center-border">
                 <div class="card-center">
                     <div class="table-responsive tabley-responsive">
-                        <input
+                        <!-- <input
                             id="searchinput"
                             type="search"
                             class="table-input form-control"
                             placeholder="SEARCH"
                             [(ngModel)]="iFilter"
-                        >
+                        > -->
                         <table
                             id="myTable"
                             class="table table-bordered table-striped"
@@ -637,14 +625,8 @@
                 </div>
             </div>
         </div>
-        <div
-            class="col-sm-2"
-            style="padding: 0;"
-        >
-            <div
-                class="card"
-                style="height: 518px;"
-            >
+        <div class="col-sm-2" style="padding: 0;">
+            <div class="card" style="height: 518px;">
                 <div class="card-title">
                     <h4>Candidate Offer Details</h4>
                 </div>

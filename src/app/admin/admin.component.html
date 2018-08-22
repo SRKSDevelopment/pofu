@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="c-body">
+      <div class="c-head">Master</div>
+      <div class="c-b">
+          <div class="col-sm-2">
+              <a class="photo text-center" (click)="openModal(template)">
+                  <img src="./assets/excel.png">
+                  <div class="glow-wrap">
+                      <i class="glow"></i>
+                  </div>
+                  <h6 class="master-header-sub">Import Excel</h6>
+              </a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #template>
+    <div class="modal-header">
+        <h5 class="modal-title">
+          Import Excel
+        </h5>
+    </div>
+    <div class="modal-body">
+        <input type="file" class="input-border col-sm-7" (change)="incomingfile($event)" placeholder="Upload file" accept=".xlsx">
+        <button type="button" class="btn btn-info" (click)="Upload()" style="margin-left: 10px;">Upload</button>
+    </div>
+    <div class="clearfix"></div>
+    <div class="modal-footer clearfix">
+        <button type="button" class="btn schedule-footer btn-success" (click)="save()">
+            Save <img src="./assets/save.png">
+        </button>
+        <button type="button" class="btn schedule-footer btn-danger" (click)="onClose()">
+            Close <img src="./assets/delete.png">
+        </button>
+    </div>
+</ng-template>
