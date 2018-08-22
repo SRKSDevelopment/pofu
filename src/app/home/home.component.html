@@ -92,6 +92,7 @@
                                     name="srch-term"
                                     id="srch-term"
                                     type="text"
+                                    [(ngModel)]="iFilter"
                                 >
                                 <div class="input-group-btn">
                                     <button
@@ -349,13 +350,80 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let item of data | filter : ['taggedLOB' ,'CVID','firstName','middleName','lastName','offerDateIST','offerAcceptDateIST','expectedJoiningDateist','expectedJoiningMonth','fulfillmentMonth','targetFulfillmentRoundUp','actualJoiningDateIST','sapCode','source','sourceDetails','agencyCode','agencyName','sourceMailID','emailAddress','contactNumber','country','nationality','gender','TEX','REX','previousOrganizationName','job','jobFamily','primarySkill','secondarySkill','domainForInfra','subDomainForInfra','eBand','eSubBad','designation','designation2','tLevel','joiningLocation','personalArea','personalSubArea','joiningL1','joiningL2','joiningL3','joiningL4','employeeGroup','accountManager','billingDateIST','billingType','customerName','projectName','expectedClosureDateIST','requisitionDateIST','reportingManager','requisitionSource','tagManager','recruiter','recruiter_Ack','canbehiredRehireNew','tagExecutiveAssignDateIST','tagManagerAssignDateIST','srNumber','autoreqID','srStatus','joiningStatus','hrStatus','homephone','otherPhone','fullName','jobTitle','department','projectCode','type','trackDetail','pofuRAGStatus']: iFilter |  orderBy: key : reverse | paginate: { itemsPerPage: [number], currentPage: p }">
-                                    <td>{{item.slNo}}</td>
-                                    <td>{{item.name}}</td>
-                                    <td>{{item.lob}}</td>
-                                    <td>{{item.email}}</td>
-                                    <td>{{item.phone}}</td>
-                                    <td>{{item.stage}}</td>
-                                    <td>{{item.status}}</td>
+                                    <td>{{item.taggedLOB}}</td>
+                                    <td>{{item.cvid}}</td>
+                                    <td>{{item.firstName}}</td>
+                                    <td>{{item.middleName}}</td>
+                                    <td>{{item.lastName}}</td>
+                                    <td>{{item.offerDateIST}}</td>
+                                    <td>{{item.offerAcceptDateIST}}</td>
+                                    <td>{{item.expectedJoiningDateist}}</td>
+                                    <td>{{item.expectedJoiningMonth}}</td>
+                                    <td>{{item.fulfillmentMonth}}</td>
+                                    <td>{{item.targetFulfillmentRoundUp}}</td>
+                                    <td>{{item.actualJoiningDateIST}}</td>
+                                    <td>{{item.sapCode}}</td>
+                                    <td>{{item.source}}</td>
+                                    <td>{{item.sourceDetails}}</td>
+                                    <td>{{item.agencyCode}}</td>
+                                    <td>{{item.agencyName}}</td>
+                                    <td>{{item.sourceMailID}}</td>
+                                    <td>{{item.emailAddress}}</td>
+                                    <td>{{item.contactNumber}}</td>
+                                    <td>{{item.country}}</td>
+                                    <td>{{item.nationality}}</td>
+                                    <td>{{item.gender}}</td>
+                                    <td>{{item.tex}}</td>
+                                    <td>{{item.rex}}</td>
+                                    <td>{{item.previousOrganizationName}}</td>
+                                    <td>{{item.job}}</td>
+                                    <td>{{item.jobFamily}}</td>
+                                    <td>{{item.primarySkill}}</td>
+                                    <td>{{item.secondarySkill}}</td>
+                                    <td>{{item.domainForInfra}}</td>
+                                    <td>{{item.subDomainForInfra}}</td>
+                                    <td>{{item.eBand}}</td>
+                                    <td>{{item.eSubBand}}</td>
+                                    <td>{{item.designation}}</td>
+                                    <td>{{item.designation2}}</td>
+                                    <td>{{item.tLevel}}</td>
+                                    <td>{{item.joiningLocation}}</td>
+                                    <td>{{item.personalArea}}</td>
+                                    <td>{{item.personalSubArea}}</td>
+                                    <td>{{item.joiningL1}}</td>
+                                    <td>{{item.joiningL2}}</td>
+                                    <td>{{item.joiningL3}}</td>
+                                    <td>{{item.joiningL4}}</td>
+                                    <td>{{item.employeeGroup}}</td>
+                                    <td>{{item.accountManager}}</td>
+                                    <td>{{item.billingDateIST}}</td>
+                                    <td>{{item.billingType}}</td>
+                                    <td>{{item.customerName}}</td>
+                                    <td>{{item.projectName}}</td>
+                                    <td>{{item.expectedClosureDateIST}}</td>
+                                    <td>{{item.requisitionDateIST}}</td>
+                                    <td>{{item.reportingManager}}</td>
+                                    <td>{{item.requisitionSource}}</td>
+                                    <td>{{item.tagManager}}</td>
+                                    <td>{{item.recruiter}}</td>
+                                    <td>{{item.recruiterAck}}</td>
+                                    <td>{{item.canbehiredRehireNew}}</td>
+                                    <td>{{item.tagExecutiveAssignDateIST}}</td>
+                                    <td>{{item.tagManagerAssignDateIST}}</td>
+                                    <td>{{item.srNumber}}</td>
+                                    <td>{{item.autoReqID}}</td>
+                                    <td>{{item.srStatus}}</td>
+                                    <td>{{item.joiningStatus}}</td>
+                                    <td>{{item.hrStatus}}</td>
+                                    <td>{{item.homePhone}}</td>
+                                    <td>{{item.otherPhone}}</td>
+                                    <td>{{item.fullName}}</td>
+                                    <td>{{item.jobTitle}}</td>
+                                    <td>{{item.department}}</td>
+                                    <td>{{item.pojectCode}}</td>
+                                    <td>{{item.type}}</td>
+                                    <td>{{item.trackDetail}}</td>
+                                    <td>{{item.pofuRagStatus}}</td>
                                 </tr>
                             </tbody>
 

@@ -37,7 +37,8 @@ export class AdminComponent implements OnInit {
           var workbook = XLSX.read(bstr, {type:"binary"});
           var first_sheet_name = workbook.SheetNames[0];
           var worksheet = workbook.Sheets[first_sheet_name];
-          console.log(XLSX.utils.sheet_to_json(worksheet,{raw:true}));
+          //console.log(XLSX.utils.sheet_to_json(worksheet,{raw:true}));
+          console.log(XLSX.utils.sheet_to_json(workbook.Sheets[first_sheet_name]));
       }
       fileReader.readAsArrayBuffer(this.file);
 }
