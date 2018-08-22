@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
 // import 'hammerjs';
 import { HomeModule } from './home/home.module';
+import { AdminModule } from './admin/admin.module';
 import { HashLocationStrategy, LocationStrategy,PathLocationStrategy } from '@angular/common';
 // import { NgxSlidesModule } from 'ngx-slides'
 
@@ -28,6 +29,7 @@ import { HashLocationStrategy, LocationStrategy,PathLocationStrategy } from '@an
     SharedModule.forRoot(),
     HttpClientModule,
     HomeModule,
+    AdminModule,
     // NgxSlidesModule,
     LoadingModule.forRoot({
       animationType: ANIMATION_TYPES.rectangleBounce,
