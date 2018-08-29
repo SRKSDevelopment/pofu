@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';//to mapping the data
 import {Router, ActivatedRoute, NavigationExtras} from '@angular/router';//for navigate the pages
 import {Storage} from "../utils/storage";//to store the data 
 import { ApexService } from './apex.service';//own service for loader
-import { environment } from '../../../environments/environment';
+import { environment } from 'environments/environment';
 
 
 

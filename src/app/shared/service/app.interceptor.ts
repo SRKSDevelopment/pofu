@@ -10,7 +10,7 @@ import {
 // import { Adal5HTTPService, Adal5Service } from 'adal-angular5';
 import { ApexService } from './apex.service';//it is own service form the loader
 import { Observable } from 'rxjs';// it is a observable
-import { environment } from '../../../environments/environment';
+import { environment } from 'environments/environment';
 import { Storage } from '../utils/storage';
 import { AppService } from './app.service';
 import { throwError, of } from 'rxjs';

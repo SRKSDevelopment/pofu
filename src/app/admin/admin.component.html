@@ -3,15 +3,96 @@
     <div class="c-body">
       <div class="c-head">Master</div>
       <div class="c-b">
-          <div class="col-sm-2">
-              <a class="photo text-center" (click)="openModal(template)">
-                  <img src="./assets/excel.png">
-                  <div class="glow-wrap">
-                      <i class="glow"></i>
-                  </div>
-                  <h6 class="master-header-sub">Import Excel</h6>
-              </a>
-          </div>
+            <div class="col-sm-12">
+                <h4 class="master-header-main">Geography</h4>
+                <div class="col-sm-2">
+                    <a routerLink="/view-country" class="photo text-center">
+                        <img src="./assets/country.png">
+                        <div class="glow-wrap">
+                            <i class="glow"></i>
+                        </div>
+                        <h6 class="master-header-sub">Country</h6>
+                    </a>
+                </div>
+                <div class="col-sm-2">
+                    <a class="photo text-center">
+                        <img src="./assets/state.png">
+                        <div class="glow-wrap">
+                            <i class="glow"></i>
+                        </div>
+                        <h6 class="master-header-sub">State</h6>
+                    </a>
+                </div>
+                <div class="col-sm-2">
+                    <a class="photo text-center">
+                        <img src="./assets/city.png">
+                        <div class="glow-wrap">
+                            <i class="glow"></i>
+                        </div>
+                        <h6 class="master-header-sub">City</h6>
+                    </a>
+                </div>
+                <div class="col-sm-2">
+                    <a class="photo text-center">
+                        <img src="./assets/pincode.png">
+                        <div class="glow-wrap">
+                            <i class="glow"></i>
+                        </div>
+                        <h6 class="master-header-sub">Pincode</h6>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <h4 class="master-header-main">Education</h4>
+                <div class="col-sm-2">
+                    <a routerLink="/view-country" class="photo text-center">
+                        <img src="./assets/university.png">
+                        <div class="glow-wrap">
+                            <i class="glow"></i>
+                        </div>
+                        <h6 class="master-header-sub">University</h6>
+                    </a>
+                </div>
+                <div class="col-sm-2">
+                    <a class="photo text-center">
+                        <img src="./assets/institute.png">
+                        <div class="glow-wrap">
+                            <i class="glow"></i>
+                        </div>
+                        <h6 class="master-header-sub">Institution</h6>
+                    </a>
+                </div>
+                <div class="col-sm-2">
+                    <a class="photo text-center">
+                        <img src="./assets/course.png">
+                        <div class="glow-wrap">
+                            <i class="glow"></i>
+                        </div>
+                        <h6 class="master-header-sub">Course</h6>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <h4 class="master-header-main">Others</h4>
+                <div class="col-sm-2">
+                    <a class="photo text-center" (click)="openModal(template)" style="cursor: pointer">
+                        <img src="./assets/excel.png">
+                        <div class="glow-wrap">
+                            <i class="glow"></i>
+                        </div>
+                        <h6 class="master-header-sub">Import Excel</h6>
+                    </a>
+                </div>
+                <div class="col-sm-2">
+                    <a routerLink="/status" class="photo text-center">
+                        <img src="./assets/list.png">
+                        <div class="glow-wrap">
+                            <i class="glow"></i>
+                        </div>
+                        <h6 class="master-header-sub">Status</h6>
+                    </a>
+                </div>
+            </div>
       </div>
     </div>
   </div>
@@ -23,13 +104,13 @@
         </h5>
     </div>
     <div class="modal-body">
-        <input type="file" class="input-border col-sm-7" (change)="incomingfile($event)" placeholder="Upload file" accept=".xlsx">
-        <button type="button" class="btn btn-info" (click)="Upload()" style="margin-left: 10px;">Upload</button>
+        <input type="file" class="input-border col-sm-7" (change)="incomingfile($event)" placeholder="Upload file" accept=".xlsx" style="margin-bottom: 14px;">
+       
     </div>
     <div class="clearfix"></div>
     <div class="modal-footer clearfix">
-        <button type="button" class="btn schedule-footer btn-success" (click)="save()">
-            Save <img src="./assets/save.png">
+        <button type="button" class="btn schedule-footer btn-success" (click)="Upload(item)">
+            Upload <img src="./assets/save.png">
         </button>
         <button type="button" class="btn schedule-footer btn-danger" (click)="onClose()">
             Close <img src="./assets/delete.png">

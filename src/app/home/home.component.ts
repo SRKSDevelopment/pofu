@@ -1,17 +1,23 @@
-import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener,TemplateRef } from '@angular/core';
 import { Storage } from '../shared/utils/storage';
 import { AppService } from '../shared/service/app.service';
-
-
-
+import { HomeService } from './home.service';
+import { AdminService } from './../admin/admin.service';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { AddStatus } from './../shared/entities/addStatus';
+import { Item } from '../../../node_modules/angular2-multiselect-dropdown/menu-item';
+import { AlertService } from '../shared/alerts/_services/alert.service';
+import { AlertType } from '../shared/alerts/_models/alert';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html'
 
 })
 export class HomeComponent implements OnInit {
-
+  modalRef: BsModalRef;
   fromDate: any = new Date();
+  addStatus : AddStatus = new AddStatus();
   data: any = [];
   key: string = 'slNo'; //set default
   reverse: boolean = false;
@@ -19,145 +25,31 @@ export class HomeComponent implements OnInit {
   len: any = [];
   number: any;
   p: number = 1;
-  
-  constructor(private appService: AppService) {
+  candidatesID:any;
+  candidateDetail: any;
+  status:any;
+  statusName:any;
+  candidate:any;
+  followUpDate:Date;
+  stage:string;
+  updatedBy:string;
+  pofuStatus:string;
+  statusID:any;
+  obj: any;
+  pofuStatusID:any;
+  nameStatus:string;
+  selected:any;
+  config = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
+  constructor(private alertService: AlertService, private appService: AppService, private homeService: HomeService, private adminService: AdminService, private modalService: BsModalService) {
     // Storage.clearSession();
     // history.pushState(null, null, location.href);
     // window.onpopstate = function(event) {
     //  history.go(1);
-    this.data = [
-    {autoReqID: "90060BR",
-    billingDateIST:"30-Jul-14",
-    billingType:"Billable",
-    canbehiredRehireNew:"Yes",
-    contactNumber:"9966961699",
-    country:"INDIA",
-    customerName:"MICROSOFT CORPORATION",
-    cvid:"3588762",
-    department:"54532642, 54532644, 54353534, 54288299, 54288299, 54288299, 54353534, 54286722, 54286722, 54288299, 54288299, 54353621, 54353621, 54353621, 54353621",
-    designation2:"CONSULTANT",
-    eBand:"E1",
-    eSubBand:"E1.2",
-    emailAddress:"pradeep_pednekar2003@yahoo.com",
-    employeeGroup:"Business Line FT",
-    expectedClosureDateIST:"1-Jul-14",
-    expectedJoiningDateist:"6-Oct-14",
-    expectedJoiningMonth:"1-Oct-14",
-    firstName:"Pradeep",
-    fulfillmentMonth:"28-Jul-14",
-    gender:"Male",
-    homePhone:"9966961699",
-    hrStatus:"Offer Accepted",
-    job:"Technical Consultant - Senior - MSD",
-    jobFamily:"Practice (Packages - MSD)",
-    jobTitle:"EXECUTIVE, ASSOCIATE MANAGER- TAG OFFSHORE, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler",
-    joiningL1:"SL CORE APPS",
-    joiningL2:"SL CORE APPS-FT",
-    joiningL3:"SL CORE APPS-FT-Microsoft",
-    joiningL4:"SL CORE APPS-FT-Microsoft-DU4",
-    joiningLocation:"Hyd-Madhapur,H01B HITEC CITY-2",
-    lastName:"Pednekar",
-    offerAcceptDateIST:"15-Sep-14",
-    offerDateIST:"23-May-14",
-    otherPhone:"9966961699",
-    personalArea:"SS India",
-    personalSubArea:"Hyderabad",
-    pofuRagStatus:"Red",
-    pojectCode:"C130164",
-    previousOrganizationName:"HCL Technologies Limited",
-    primarySkill:"Technical Skills-Microsoft Technologies-.Net",
-    projectName:"MSIT EAS_MSD CCRM_Engg - Staff Aug",
-    recruiter:"Kumar, D Ravi (51496659)",
-    recruiterAck:"Yes",
-    reportingManager:"Satishchandra Damera (51429114)",
-    requisitionDateIST:"23-Apr-14",
-    requisitionSource:"New Project/Extension",
-    rex:"49",
-    source:"DirectRPO",
-    sourceDetails:"DirectRPO",
-    srNumber:"EAS-/EAS-/2014/313243",
-    srStatus:"Open",
-    tagExecutiveAssignDateIST:"2-May-14",
-    tagManager:"System Integration (HRXMLEMPLID) (HRXMLEMPLID)",
-    tagManagerAssignDateIST:"29-Apr-14",
-    taggedLOB:"APPS",
-    targetFulfillmentRoundUp:"1-Jul-14",
-    tex:"49",
-    trackDetail:"Kumar, D Ravi ",
-    type:"FTE"
-  },
-  {autoReqID: "90060BR",
-    billingDateIST:"30-Jul-14",
-    billingType:"Billable",
-    canbehiredRehireNew:"Yes",
-    contactNumber:"9966961699",
-    country:"INDIA",
-    customerName:"MICROSOFT CORPORATION",
-    cvid:"3588762",
-    department:"54532642, 54532644, 54353534, 54288299, 54288299, 54288299, 54353534, 54286722, 54286722, 54288299, 54288299, 54353621, 54353621, 54353621, 54353621",
-    designation2:"CONSULTANT",
-    eBand:"E1",
-    eSubBand:"E1.2",
-    emailAddress:"pradeep_pednekar2003@yahoo.com",
-    employeeGroup:"Business Line FT",
-    expectedClosureDateIST:"1-Jul-14",
-    expectedJoiningDateist:"6-Oct-14",
-    expectedJoiningMonth:"1-Oct-14",
-    firstName:"Pradeep",
-    fulfillmentMonth:"28-Jul-14",
-    gender:"Male",
-    homePhone:"9966961699",
-    hrStatus:"Offer Accepted",
-    job:"Technical Consultant - Senior - MSD",
-    jobFamily:"Practice (Packages - MSD)",
-    jobTitle:"EXECUTIVE, ASSOCIATE MANAGER- TAG OFFSHORE, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler, Recruitment Enabler",
-    joiningL1:"SL CORE APPS",
-    joiningL2:"SL CORE APPS-FT",
-    joiningL3:"SL CORE APPS-FT-Microsoft",
-    joiningL4:"SL CORE APPS-FT-Microsoft-DU4",
-    joiningLocation:"Hyd-Madhapur,H01B HITEC CITY-2",
-    lastName:"Pednekar",
-    offerAcceptDateIST:"15-Sep-14",
-    offerDateIST:"23-May-14",
-    otherPhone:"9966961699",
-    personalArea:"SS India",
-    personalSubArea:"Hyderabad",
-    pofuRagStatus:"Red",
-    pojectCode:"C130164",
-    previousOrganizationName:"HCL Technologies Limited",
-    primarySkill:"Technical Skills-Microsoft Technologies-.Net",
-    projectName:"MSIT EAS_MSD CCRM_Engg - Staff Aug",
-    recruiter:"Kumar, D Ravi (51496659)",
-    recruiterAck:"Yes",
-    reportingManager:"Satishchandra Damera (51429114)",
-    requisitionDateIST:"23-Apr-14",
-    requisitionSource:"New Project/Extension",
-    rex:"49",
-    source:"DirectRPO",
-    sourceDetails:"DirectRPO",
-    srNumber:"EAS-/EAS-/2014/313243",
-    srStatus:"Open",
-    tagExecutiveAssignDateIST:"2-May-14",
-    tagManager:"System Integration (HRXMLEMPLID) (HRXMLEMPLID)",
-    tagManagerAssignDateIST:"29-Apr-14",
-    taggedLOB:"APPS",
-    targetFulfillmentRoundUp:"1-Jul-14",
-    tex:"49",
-    trackDetail:"Kumar, D Ravi ",
-    type:"FTE"
-  }
-  
-    // { slNo: 2, name: 'Ashwin', lob: '-', email: 'ashwin@gmail.com', phone: '8526547892', stage: 'S1', status: '	No Response' },
-    // { slNo: 3, name: 'Sunil', lob: '-', email: 'sunil@gmail.com', phone: '8526547892', stage: 'S2', status: 'Connect Later' },
-    // { slNo: 4, name: 'Rakesh', lob: '-', email: 'rakesh@gmail.com', phone: '8526547892', stage: 'S3', status: 'Complete' },
-    // { slNo: 5, name: 'Sharath', lob: '-', email: 'sharath@gmail.com', phone: '8526547892', stage: 'S1', status: 'Pending' },
-    // { slNo: 6, name: 'Chethan', lob: '-', email: 'chethan@gmail.com', phone: '8526547892', stage: 'S1', status: 'No Response' },
-    // { slNo: 7, name: 'Roshan', lob: '-', email: 'chethan@gmail.com', phone: '8526547892', stage: 'S2', status: 'Connect Later' },
-    // { slNo: 8, name: 'Ranjith', lob: '-', email: 'ranjith@gmail.com', phone: '8526547892', stage: 'S3', status: 'Complete' },
-    // { slNo: 9, name: 'Raj', lob: '-', email: 'raj@gmail.com', phone: '8526547892', stage: 'S1', status: 'No Response' },
-    // { slNo: 10, name: 'Sravan', lob: '-', email: 'sravan@gmail.com', phone: '8526547892', stage: 'S2', status: 'Connect Later' },
-    // { slNo: 11, name: 'Jagan', lob: '-', email: 'jagan@gmail.com', phone: '8526547892', stage: 'S3', status: 'Complete' }
-  ];
+    this.getAllCandidates();
+    this.getStatusDetails();
     this.number = 10;
   }
 
@@ -166,9 +58,106 @@ export class HomeComponent implements OnInit {
     this.key = key;
     this.reverse = !this.reverse;
   }
+  pre(){
+    this.p = this.p - 1 ;
+  }
+  next(){
+    this.p = this.p + 1 ;
+  }
   pageChanged(event) {
     // console.log(event)
     this.p = event;
   }
 
+  getAllCandidates(){
+    this.homeService.viewAllCandidates().subscribe((data:any)=>{
+      this.data = data.response;
+      this.candidatesID = data.response.candidatesID;
+      //console.log(this.data);
+    })
+  }
+
+  getStatusDetails(){
+    this.adminService.viewAllStatus().subscribe((data:any)=>{
+      //this.data = data.response;
+      this.statusName = data.response;
+      this.statusID = data.response;
+      //console.log(this.data);
+    })
+  }
+
+  empDetails(item){
+    this.candidatesID = item.candidatesID;
+    //console.log(item.candidatesID);
+    this.selected = item; 
+    this.getCandidateDetails(this.candidatesID)
+ 
+  }
+  getCandidateDetails(data){
+    this.homeService.ViewAllStatusReason(data).subscribe((data: any) => {    
+      console.log(data.response);
+      this.candidateDetail = data.isStatus;
+      this.status = data.response;
+      this.pofuStatusID = data.response.pofuStatusID;
+      this.pofuStatus = data.response.pofuStatus;
+    });
+  }
+  isActive(item) {
+    return this.selected === item;
+};
+  //modal for feedback
+  openModal(template: TemplateRef<any>, item) {
+    this.modalRef = this.modalService.show(template, this.config);
+    this.candidate = item;
+    this.candidatesID = item.candidatesID
+    this.stage = item.stage;
+    this.followUpDate = item.followUpDate;
+    this.updatedBy = item.updatedBy;
+    this.pofuStatus = item.pofuStatus;
+    console.log(this.candidate);
+  }
+
+  getStatus($event){
+    console.log($event.statusName);
+    this.nameStatus = $event.statusName
+  }
+
+
+  save(){
+    let obj = {
+    candidatesID: this.candidatesID,
+    stage: this.stage,
+    followUpDate: this.followUpDate,
+    pofuStatusID: this.pofuStatusID,
+    pofuStatus: this.nameStatus
+    }
+    console.log(obj);
+    this.homeService.addStatusModal(obj).subscribe((data:any)=>{
+      console.log(data);
+      if(data.isStatus === false){
+        this.alertService.alert(AlertType.Error,data.response)
+        }else{
+          this.alertService.alert(AlertType.Success,data.response)
+        }
+      this.onClose();
+    });
+  }
+  onClose(){
+    this.modalRef.hide();
+    this.getStatusDetails();
+    this.getAllCandidates();
+    this.getCandidateDetails(this.candidatesID)
+  }
+
+  //to send candidate ID
+  // getCandidateDetails(){
+  //   this.homeService.ViewAllStatusReason(this.candidatesID).subscribe((data: any) => {    
+  //     console.log(data.response);
+  //       // if(data.isStatus === false){
+  //       //   this.alertService.alert(AlertType.Error,data.message)
+  //       //   }else{
+  //       //     this.alertService.alert(AlertType.Success,data.message)
+  //       //   }      
+  //   });
+  // }
 }

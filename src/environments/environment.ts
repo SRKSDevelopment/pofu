@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
 //API_END_POINT: 'http://180.151.248.98:805'
-API_END_POINT: 'http://180.151.248.98:8066'
+API_END_POINT: 'http://192.168.0.15:8089'
 };
   
