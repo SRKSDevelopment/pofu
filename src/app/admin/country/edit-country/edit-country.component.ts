@@ -20,40 +20,38 @@ export class EditCountryComponent implements OnInit {
     //CountryForm.edit(this.myForm);
   }
   //to get object from parent component
-//   ngOnChanges(changes: SimpleChanges) {
-//     if (changes['country']) {
-//       this.country = changes['country'].currentValue;
-//       // console.log(this.country);
-//       this.getCountry(this.country.countryId);
-//     }
-//   }
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['country']) {
+      this.country = changes['country'].currentValue;
+     console.log(this.country);
+      this.getCountry(this.country.countryId);
+    }
+  }
 
   ngOnInit() {
   }
   //to update the country
-//   save() {
-//     this.geographyService.updateCountry(this.country).subscribe((data: any) => {
-//       // console.log(data);
-//       //  console.log(this.country);    
-//         if(data.isStatus === false){
-//           this.alertService.alert(AlertType.Error,data.message)
-//           }else{
-//             this.alertService.alert(AlertType.Success,data.message)
-//           }      
-//       this.onClose();
-//     });
-//   }
+  save() {
+    this.adminservice.saveCountry(this.country).subscribe((data: any) => {  
+        if(data.isStatus === false){
+          this.alertService.alert(AlertType.Error,data.response)
+          }else{
+            this.alertService.alert(AlertType.Success,data.response)
+          }      
+      this.onClose();
+    });
+  }
   
 //   //get country data by id
-//   getCountry(data) {
-//     this.geographyService.getCountryData(data).subscribe((data: any) => {
-//       this.country = data. response;
-//       // console.log(this.country);
-//     });
-//   }
+getCountry(data) {
+  this.adminservice.getCountryData(data).subscribe((data: any) => {
+    this.country = data.response;
+    // console.log(this.country);
+  });
+}
 //   //to close the modal
-//   onClose() {
-//     this.close.emit();
-//   }
+  onClose() {
+    this.close.emit();
+  }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit , Input ,Output ,EventEmitter} from '@angular/core';
+import { Component, OnInit , Input ,Output ,EventEmitter,SimpleChanges} from '@angular/core';
 import { AdminService } from './../../admin.service';
 import { Country } from '../../../shared/entities/countries';
 //import { CountryForm } from '../country.form';
@@ -12,7 +12,7 @@ import { AlertType } from '../../../shared/alerts/_models/alert';
 })
 export class AddCountryComponent implements OnInit {  
   //myForm: any = CountryForm.init();
-  country:Country = new Country();
+  @Input() country:Country = new Country();
   errorMsg:boolean = false;
   //event emmiter
   @Output() close: EventEmitter<any> = new EventEmitter();
@@ -23,23 +23,22 @@ export class AddCountryComponent implements OnInit {
   ngOnInit() {
   }
   //to save the country
-//   save(){
-//     this.geographyService.saveCountry(this.country).subscribe((data: any) => {
-//       // console.log(data);
-//       //  console.log(this.country);
-//       if(data.isStatus === false){
-//         this.alertService.alert(AlertType.Error,data.message)
-//         }else{
-//           this.alertService.alert(AlertType.Success,data.message)
-//         }      
-//     this.onClose();
-//   });
-// }
+  save(){
+    this.adminservice.saveCountry(this.country).subscribe((data: any) => {
+      console.log(data);
+       console.log(this.country);
+      if(data.isStatus === false){
+        this.alertService.alert(AlertType.Error,data.response)
+        }else{
+          this.alertService.alert(AlertType.Success,data.response)
+        }      
+    this.onClose();
+  });
+}
 //   //to close the modal
-//   onClose(){
-//     this.close.emit();
-//   }
-//   errorMeassage(){
-//     this.errorMsg = true;
-//   }
+  onClose(){
+    this.close.emit();
+  
+  }
+ 
 }

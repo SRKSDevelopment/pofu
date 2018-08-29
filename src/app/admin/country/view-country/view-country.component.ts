@@ -33,7 +33,7 @@ export class ViewCountryComponent implements OnInit {
   };
   @Output() pageChange: EventEmitter<number> = new EventEmitter();
   constructor(private adminservice: AdminService, private modalService: BsModalService) {
-    //this.getAllCountries();
+    this.getAllCountries();
     this.number = 10;
   }
 
@@ -44,36 +44,36 @@ export class ViewCountryComponent implements OnInit {
     this.reverse = !this.reverse;
   }
   //get all countries
-//   getAllCountries() {
-//     this.geographyService.getCountries().subscribe((data: any) => {
-//       // console.log(data);
-//       this.items = data. response;
-//       this.len= this.items.length
-//     });
-//   }
+  getAllCountries() {
+    this.adminservice.getCountries().subscribe((data: any) => {
+      console.log(data);
+      this.items = data.response;
+      this.len= this.items.length
+    });
+  }
   //open add modal
-//   openModal(template: TemplateRef<any>) {
-//     this.modalRef = this.modalService.show(template,this.config);
-//   }
+  openModal(template: TemplateRef<any>) {
+
+    this.modalRef = this.modalService.show(template,this.config);
+  }
 //   //open edit modal
-//   openModal1(template1, item: any) {
-//     this.modalRef = this.modalService.show(template1,this.config);
-//     this.selectedItem = item;
-//     this.country = Object.assign({}, this.selectedItem);
-//     // console.log(this.selectedItem)
-//   }
+  openModal1(template1, item: any) {
+    this.modalRef = this.modalService.show(template1,this.config);
+    this.selectedItem = item;
+    this.country = Object.assign({}, this.selectedItem);
+  }
 //   //open delete modal
-//   openModal2(template2, item: any) {
-//     this.modalRef = this.modalService.show(template2,this.config);
-//     this.selectedItem = item;
-//     this.country = Object.assign({}, this.selectedItem);
-//     // console.log(this.selectedItem)
-//   }
+  openModal2(template2, item: any) {
+    this.modalRef = this.modalService.show(template2,this.config);
+    this.selectedItem = item;
+    this.country = Object.assign({}, this.selectedItem);
+    // console.log(this.selectedItem)
+  }
 //   //to close the modal
-//   onClose() {
-//     this.modalRef.hide();
-//     //this.getAllCountries();
-//   }
+  onClose() {
+    this.modalRef.hide();
+  this.getAllCountries();
+  }
 
   pageChanged(event){
     // console.log(event)

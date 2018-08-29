@@ -1,0 +1,181 @@
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-lg purple-gradient"  (click)="openModal(template)">
+            <i class="fa fa-plus"></i>
+        </a>
+    </div>
+<!-- <div class="fixed-action-btn" style="bottom: 32px; right: 24px;"  >
+        <a class="btn-floating btn-lg peach-gradient" (click)="openModal(template)">
+            <img src="./assets/add.png" class="back-floating">
+        </a>
+    </div> -->
+    <div class="container-fluid">
+            <div class="row">
+                <div class="c-body">
+                    <div class="c-head">Roles</div>
+                    <div class="c-b">
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="inner-addon right-addon">
+                                            <img class="glyphicon" src="./assets/search-header.png">
+                                            <input id="searchinput" type="search" class="table-input form-control" placeholder="SEARCH">
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div> 
+                        </div>
+                        <div class="m-t--17">
+                            <table
+                            class="table1 table-bordered"
+                            >
+
+                                <thead >
+                                    <tr>
+                                        <th
+                                            data-field="BusinessUnit"
+                                            (click)="sort('roleName')"
+                                        >
+                                            <span class="drill-header">Name</span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='roleName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                        </th>
+                                        <th
+                                            data-field="Short Name"
+                                            (click)="sort('roleShortName')"
+                                        >
+                                            <span class="drill-header">Short Name</span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='roleShortName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                        </th>
+                                        <th
+                                            data-field="Short Name"
+                                            (click)="sort('roleDescription')"
+                                        >
+                                            <span class="drill-header">Description</span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='roleDescription'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                        </th>
+                                        <th data-field="DOJ">
+                                            <span class="drill-header">Action</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of items | filter : ['roleName','roleShortName' ,'roleDescription']: iFilter | orderBy: key : reverse | paginate: { itemsPerPage: [number], currentPage: p }">
+                                        <td class="valign" [ngClass]="{contactfalse : item.isActive == false}">{{ item.roleName }}</td>
+                                        <td class="valign" [ngClass]="{contactfalse : item.isActive == false}">{{ item.roleShortName }}</td>
+                                        <td class="valign" [ngClass]="{contactfalse : item.isActive == false}">{{ item.roleDescription}}</td>
+                                        <td class="text-center drill-td">
+                                                <button class="btn btn-round btn-green" (click)="openModal1(template1,item)" ><i class="fa fa-pencil"></i></button>
+                                                <button class="btn btn-round btn-red"   (click)="delete(template3,item)"><i class="fa fa-trash-o"></i></button>
+                                           
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                            <div class="pull-left"></div>
+
+                            <pagination-controls
+                                (pageChange)="pageChanged($event)"
+                              [autoHide]="true"
+                            ></pagination-controls>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+<!-- add role template -->
+
+<ng-template #template>
+    <app-add-role (close)="onClose()"></app-add-role>
+</ng-template>
+<!-- edit role template -->
+
+<ng-template #template1>
+    <app-edit-role
+        [role]="role"
+        (close)="onClose()"
+    ></app-edit-role>
+</ng-template>
+<ng-template  #template3>
+        <div class="modal-header">
+                <h5 class="modal-title">Add Role</h5>
+            </div>
+            <div class="modal-body">
+        <div class="alert alert-danger" >
+                <span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete {{roleName}}?
+            </div>
+           
+            </div>
+            <div class="clearfix"></div>
+            <div class="modal-footer clearfix">
+                <button
+                    type="button"
+                    class="btn schedule-footer btn-success"
+                    (click)="deletestatus()"
+                >
+                    Save
+                    <img src="./assets/save.png">
+                </button>
+                <button
+                    type="button"
+                    class="btn schedule-footer btn-danger"
+                    (click)="onClose()"
+                >
+                    Close
+                    <img src="./assets/delete.png">
+                </button>
+            </div>
+            
+            <!-- <div class="modal-footer-delete clearfix">
+                    <button type="button" class="btn schedule-footer btn-submit" (click)="deletestatus()">Yes
+                        <img src="../assets/tick.png" class="save-tick-img">
+                    </button>
+                    <button type="button" class="btn schedule-footer btn-close" (click)="onClose()">Close
+                        <img src="../assets/close.png" class="save-tick-img">
+                    </button>
+                </div> -->
+        <!-- <div class="modal-body modal-padding-delete">
+         
+                <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="alert-danger">Template Name:</label>&nbsp;&nbsp;<label class="alert-danger">{{templateName}}</label></div>
+                <div class="modal-footer-delete clearfix">
+                    <button type="button" class="btn schedule-footer btn-submit" (click)="deletetemplate()">Yes<img src="../assets/tick.png" class="save-tick-img"></button>
+                    <button type="button" class="btn schedule-footer btn-close" (click)="onClose()">Close<img src="../assets/close.png" class="save-tick-img"></button>
+                </div>
+          
+        </div> -->
+        <!-- <div class="modal-body modal-padding-delete">
+        <span  *ngIf="checkdata == false">
+            <div class="alert alert-danger">
+                <span class="glyphicon glyphicon-warning-sign"></span> {{roleName}} is being used and cannot be deleted. <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do you want to archive?
+            </div>
+            <div class="modal-footer-delete clearfix">
+                <button type="button" class="btn schedule-footer btn-submit" (click)="statusArchive()">Yes
+                    <img src="../assets/tick.png" class="save-tick-img">
+                </button>
+                <button type="button" class="btn schedule-footer btn-close" (click)="onClose()">Close
+                    <img src="../assets/close.png" class="save-tick-img">
+                </button>
+            </div>
+        </span>
+        <span *ngIf="checkdata == true">
+            <div class="alert alert-danger" *ngIf="checkdata == true">
+                <span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete {{roleName}}?
+            </div>
+            <div class="modal-footer-delete clearfix">
+                <button type="button" class="btn schedule-footer btn-submit" (click)="deletestatus()">Yes
+                    <img src="../assets/tick.png" class="save-tick-img">
+                </button>
+                <button type="button" class="btn schedule-footer btn-close" (click)="onClose()">Close
+                    <img src="../assets/close.png" class="save-tick-img">
+                </button>
+            </div>
+        </span>
+      
+    </div> -->
+    </ng-template>

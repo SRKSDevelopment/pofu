@@ -1,0 +1,90 @@
+<div class="modal-header">
+    <h5 class="modal-title">Add Role</h5>
+</div>
+<div class="modal-body">
+    <div class="form-horizontal form-group">
+        <div class="row p-b-10">
+            <label class="control-label col-sm-3">Name</label>
+            <div class="col-sm-6">
+                <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="role.roleName"
+                    required
+                >
+            </div>
+            <!-- <small>
+                        <form-messages [control]="myForm.controls.role_rolename"></form-messages>
+                    </small> -->
+        </div>
+    </div>
+    <div class="form-horizontal form-group">
+        <div class="row p-b-10">
+            <label class="control-label col-sm-3">Short Name</label>
+            <div class="col-sm-6">
+                <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="role.roleShortName"
+                    required
+                >
+
+                <!-- <small>
+                        <form-messages [control]="myForm.controls.role_roleshortname"></form-messages>
+                    </small> -->
+            </div>
+        </div>
+    </div>
+    <div class="form-horizontal form-group">
+        <div class="row p-b-10">
+            <label class="control-label col-sm-3">Description</label>
+            <div class="col-sm-6">
+                <textarea
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="role.roleDescription"
+                    required
+                ></textarea>
+                <!-- <small>
+                        <form-messages [control]="myForm.controls.role_roledescription"></form-messages>
+                    </small> -->
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="col-sm-12"
+        style="padding: 0 0 14px 33px;"
+    >
+        <!-- <span></span> -->
+        <label class="checkboxFive checkboxorg">
+            Is Active
+            <input
+                type="checkbox"
+                [(ngModel)]="role.isActive"
+                [ngModelOptions]="{standalone: true}"
+            >
+            <span class="checkmark"></span>
+        </label>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="modal-footer clearfix">
+    <button
+        type="button"
+        class="btn schedule-footer btn-success"
+        (click)="save()"
+    >
+        Save
+        <img src="./assets/save.png">
+    </button>
+    <button
+        type="button"
+        class="btn schedule-footer btn-danger"
+        (click)="onClose()"
+    >
+        Close
+        <img src="./assets/delete.png">
+    </button>
+</div>

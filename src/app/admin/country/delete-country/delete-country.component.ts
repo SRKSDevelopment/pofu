@@ -22,31 +22,29 @@ export class DeleteCountryComponent implements OnInit {
   }
 
   //to get object from parent component
-//   ngOnChanges(changes: SimpleChanges) {
-//     if (changes['country']) {
-//       this.country = changes['country'].currentValue;
-//       this.countryName = this.country.countryName;
-//       // console.log(this.country);
-//       //this.getCountry(this.country.countryId);
-//     }
-//   }
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['country']) {
+      this.country = changes['country'].currentValue;
+      this.countryName = this.country.countryName;
+    }
+  }
 ngOnInit() {
 }
 //   //to delete the country
-//   deleteColorCode(){
-//     this.geographyService.deleteCountryData(this.country.countryId).subscribe((data: any) => {    
-//         if(data.isStatus === false){
-//           this.alertService.alert(AlertType.Error,data.message)
-//           }else{
-//             this.alertService.alert(AlertType.Success,data.message)
-//           }      
-//       this.onClose();
-//     });
-//   }
+  deleteCountry(){
+    this.adminservice.deleteCountryData(this.country.countryId).subscribe((data: any) => {    
+        if(data.isStatus === false){
+          this.alertService.alert(AlertType.Error,data.response)
+          }else{
+            this.alertService.alert(AlertType.Success,data.response)
+          }      
+      this.onClose();
+    });
+  }
   
 //   //to close the modal
-//   onClose() {
-//     this.close.emit();
-//   }
+  onClose() {
+    this.close.emit();
+  }
 
 }

@@ -1,0 +1,67 @@
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-lg purple-gradient" (click)="openModal(template)">
+            <i class="fa fa-plus"></i>
+        </a>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="c-body">
+                <div class="c-head">State</div>
+                <div class="c-b">
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="inner-addon right-addon">
+                                        <img class="glyphicon" src="./assets/search-header.png">
+                                        <input id="searchinput" type="search" class="table-input form-control" placeholder="SEARCH">
+                                    </div>
+                                </div>
+                            </div>  
+                        </div> 
+                    </div>
+                    <table class="table1 table-bordered">
+                        <thead>
+                            <tr>
+                                    <th><span class="drill-header">Country Name</span></th>
+                                <th><span class="drill-header">State Code</span></th>
+                                <th><span class="drill-header">State Name</span></th>
+                                <th><span class="drill-header">Action</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of items | filter : ['countryName' ,'stateName','stateCode']: iFilter | paginate: { itemsPerPage: [number], currentPage: p }">
+                             
+                                <td>{{item.countryName}}</td>
+                                <td>{{item.stateCode}}</td>
+                                <td>{{item.stateName}}</td>
+                                <td>
+                                    <button class="btn btn-round btn-green" (click)="openModal1(template1,item)" ><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-round btn-red" (click)="openModal2(template2,item)"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-sm-offset-8 col-sm-4" style="text-align: right;">
+                        <pagination-controls (pageChange)="pageChanged($event)" [autoHide]="true"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- add Status template -->
+    <ng-template #template>
+        <app-add-state (close)="onClose()"></app-add-state>
+    </ng-template>
+    
+    <!-- edit Status template -->
+    <ng-template #template1>
+        <app-edit-state [state]="state" (close)="onClose()"></app-edit-state>
+    </ng-template>
+    
+    <!-- delete Status template -->
+    <ng-template #template2>
+        <app-delete-state [state]="state" (close)="onClose()"></app-delete-state>
+    </ng-template>

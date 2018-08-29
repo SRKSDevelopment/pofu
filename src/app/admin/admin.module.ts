@@ -11,14 +11,58 @@ import { ViewCountryComponent } from './country/view-country/view-country.compon
 import { AddCountryComponent } from './country/add-country/add-country.component';
 import { EditCountryComponent } from './country/edit-country/edit-country.component';
 import { DeleteCountryComponent } from './country/delete-country/delete-country.component';
-//import { InsightService } from './insignt.service';
+import { ViewStateComponent } from './state/view-state/view-state.component';
+import { EditStateComponent } from './state/edit-state/edit-state.component';
+import { AddStateComponent } from './state/add-state/add-state.component';
+import { DeleteStateComponent } from './state/delete-state/delete-state.component';
+import { ViewCityComponent } from './city/view-city/view-city.component';
+import { AddCityComponent } from './city/add-city/add-city.component';
+import { EditCityComponent } from './city/edit-city/edit-city.component';
+import { DeleteCityComponent } from './city/delete-city/delete-city.component';
+import { ViewPincodeComponent } from './pincode/view-pincode/view-pincode.component';
+import { EditPincodeComponent } from './pincode/edit-pincode/edit-pincode.component';
+import { AddPincodeComponent } from './pincode/add-pincode/add-pincode.component';
+import { DeletePincodeComponent } from './pincode/delete-pincode/delete-pincode.component';
+import { ViewCourseComponent } from './course/view-course/view-course.component';
+import { AddCourseComponent } from './course/add-course/add-course.component';
+import { EditCourseComponent } from './course/edit-course/edit-course.component';
+import { DeleteCourseComponent } from './course/delete-course/delete-course.component';
+import { ViewInstitutionComponent } from './institution/view-institution/view-institution.component';
+import { EditInstitutionComponent } from './institution/edit-institution/edit-institution.component';
+import { AddInstitutionComponent } from './institution/add-institution/add-institution.component';
+import { DeleteInstitutionComponent } from './institution/delete-institution/delete-institution.component';
+import { ViewUniversitiesComponent } from './universities/view-universities/view-universities.component';
+import { EditUniversitiesComponent } from './universities/edit-universities/edit-universities.component';
+import { AddUniversitiesComponent } from './universities/add-universities/add-universities.component';
+import { DeleteUniversitiesComponent } from './universities/delete-universities/delete-universities.component';
+import { ViewRoleComponent } from './role/view-role/view-role.component';
+import { EditRoleComponent } from './role/edit-role/edit-role.component';
+import { AddRoleComponent } from './role/add-role/add-role.component';
+import { DeleteRoleComponent } from './role/delete-role/delete-role.component';
 import { AdminService } from './admin.service';
+
+
+
+
+
+
+
+
+
+
 //routing pathes 
 
 const routes: Routes = [
     { path: 'admin', component: AdminComponent},
     { path: 'status', component:StatusComponent},
-    { path: 'view-country', component:ViewCountryComponent}
+    { path: 'view-country', component:ViewCountryComponent},
+    { path: 'view-state', component:ViewStateComponent},
+    { path: 'view-city', component:ViewCityComponent},
+    { path: 'view-pincode', component:ViewPincodeComponent},
+    { path: 'view-course', component:ViewCourseComponent},
+    { path: 'view-instituion', component:ViewInstitutionComponent},
+    { path: 'view-universities', component:ViewUniversitiesComponent},
+    { path: 'view-roles', component:ViewRoleComponent}
 ];
 
 @NgModule({
@@ -30,7 +74,11 @@ const routes: Routes = [
   ],
   providers: [AdminService],
   declarations: [AdminComponent, StatusComponent, AddStatusComponent, EditStatusComponent, DeleteStatusComponent,ViewCountryComponent,
-    AddCountryComponent, EditCountryComponent, DeleteCountryComponent],
+    AddCountryComponent, EditCountryComponent, DeleteCountryComponent,ViewStateComponent,EditStateComponent,AddStateComponent,DeleteStateComponent,
+  ViewCityComponent,EditCityComponent,AddCityComponent,DeleteCityComponent,ViewPincodeComponent,EditPincodeComponent,AddPincodeComponent,DeletePincodeComponent
+  ,ViewCourseComponent,AddCourseComponent,EditCourseComponent,DeleteCourseComponent,ViewInstitutionComponent,EditInstitutionComponent,AddInstitutionComponent,
+  DeleteInstitutionComponent,ViewUniversitiesComponent,EditUniversitiesComponent,AddUniversitiesComponent,DeleteUniversitiesComponent,ViewRoleComponent,EditRoleComponent,
+  AddRoleComponent,DeleteRoleComponent],
   exports: [RouterModule],
 })
 export class AdminModule { }

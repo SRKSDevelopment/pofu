@@ -1,0 +1,39 @@
+<div class="modal-header">
+    <h5 class="modal-title">
+        Add Country
+    </h5>
+</div>
+<div class="modal-body">
+    <div class="form-horizontal form-group">
+        <div class="row p-b-10">
+            <label class="control-label col-sm-3">Country Code</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" [(ngModel)]="country.countryCode">
+            </div>
+        </div>
+        <div class="row p-b-10">
+            <label class="control-label col-sm-3">Country Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" [(ngModel)]="country.countryName">
+            </div>
+        </div>
+        <!-- <div class="row p-b-10">
+            <label class="control-label col-sm-3">IS Active</label>
+            <div class="col-sm-6">
+                <label class="checkboxFive checkboxorg">                       
+                    <input type="checkbox" [(ngModel)]="status.isActive" (change)="checkEvent($event)">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div> -->
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="modal-footer clearfix">
+    <button type="button" class="btn schedule-footer btn-success" (click)="save()">
+        Save <img src="./assets/save.png">
+    </button>
+    <button type="button" class="btn schedule-footer btn-danger" (click)="onClose()">
+        Close <img src="./assets/delete.png">
+    </button>
+</div>
