@@ -64,7 +64,7 @@ export class AdminService {
   // to save the country 
   saveCountry(data: any) {
     this.appService.showLoader(true);
-    this.url = this.host + '/Geography/AddAndUpdateState';
+    this.url = this.host + '/Geography/AddAndEditCountry';
     return this.http.post(this.url, data);
   }
   // to update the country
@@ -81,7 +81,7 @@ export class AdminService {
   // to get all states from api 
   getMultipleStates() {
     this.appService.showLoader(true);
-    this.url = this.host + '/Geography/ViewMultiplestate';
+    this.url = this.host + '/Geography/ViewMultipleState';
     return this.http.get(this.url);
   }
   // to update the state
@@ -93,7 +93,7 @@ export class AdminService {
   //to save the state
   saveState(data: any) {
     this.appService.showLoader(true);
-    this.url = this.host + '/Geography/AddState';
+    this.url = this.host + '/Geography/AddAndUpdateState';
     return this.http.post(this.url, data);
   }
   // to get the particular state data
@@ -265,7 +265,7 @@ export class AdminService {
   //to update the role
   updateRole(data: any) {
     this.appService.showLoader(true);
-    this.url = this.host + '/Roles/UpdateRole';
+    this.url = this.host + '/Roles/AddAndEditRole';
     return this.http.post(this.url, data);
   }
   deleteRole(data: any) {

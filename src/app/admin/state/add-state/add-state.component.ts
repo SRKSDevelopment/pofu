@@ -27,7 +27,7 @@ export class AddStateComponent implements OnInit {
   }
   //to save the country
   save(){
-    this.adminservice.saveCountry(this.state).subscribe((data: any) => {
+    this.adminservice.saveState(this.state).subscribe((data: any) => {
       console.log(data);
        console.log(this.state);
       if(data.isStatus === false){

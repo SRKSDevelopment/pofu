@@ -32,9 +32,9 @@ save(){
     // console.log(data);
     //  console.log(this.role);
     if(data.isStatus === false){
-      this.alertService.alert(AlertType.Error,data. response.message)
+      this.alertService.alert(AlertType.Error,data.response)
       }else{
-        this.alertService.alert(AlertType.Success,data. response.message)
+        this.alertService.alert(AlertType.Success,data.response)
       }
      this.onClose();
 

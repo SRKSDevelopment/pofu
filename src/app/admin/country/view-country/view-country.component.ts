@@ -72,7 +72,7 @@ export class ViewCountryComponent implements OnInit {
 //   //to close the modal
   onClose() {
     this.modalRef.hide();
-  this.getAllCountries();
+    this.getAllCountries();
   }
 
   pageChanged(event){
