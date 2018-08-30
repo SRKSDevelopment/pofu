@@ -1,0 +1,100 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="c-body">
+            <div class="c-head">Add Organization</div>
+            <div class="c-b form-horizontal form-group">
+                <div class="col-sm-6">
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Organization Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" [(ngModel)]="organization.organizationName">
+                        </div>
+                    </div>
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Address</label>
+                        <div class="col-sm-8">
+                            <textarea type="text" class="form-control" [(ngModel)]="organization.location"></textarea>
+                        </div>
+                    </div>
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Phone No.</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" [(ngModel)]="organization.phoneNumber">
+                        </div>
+                    </div>
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Email ID</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" [(ngModel)]="organization.emailId">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Select State</label>
+                        <div class="col-sm-8">
+                            <ng-select
+                                [items]="states"
+                                class="ng-select"
+                                [(ngModel)]="organization.stateId"
+                                [ngModelOptions]="{standalone: true}"
+                                bindLabel="stateName"
+                                bindValue="stateId"
+                                placeholder="Select State"
+                                required
+                            >
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Select City</label>
+                        <div class="col-sm-8">
+                            <ng-select
+                                [items]="cities"
+                                class="ng-select"
+                                [(ngModel)]="organization.cityId"
+                                [ngModelOptions]="{standalone: true}"
+                                bindLabel="cityName"
+                                bindValue="cityId"
+                                placeholder="Select City"
+                                required
+                                
+                            >
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Select Pincode</label>
+                        <div class="col-sm-8">
+                            <ng-select
+                                [items]="pincodes"
+                                class="ng-select"
+                                [(ngModel)]="organization.pincodeId"
+                                [ngModelOptions]="{standalone: true}"
+                                bindLabel="pinCode"
+                                bindValue="pinCodeId"
+                                placeholder="Select Pincode"
+                                required
+                            >
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Is Active</label>
+                        <div class="col-sm-6">
+                            <label class="checkboxFive checkboxorg">                       
+                                <input type="checkbox" [(ngModel)]="organization.isActive" (change)="checkEvent($event)">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row p-b-10 pull-right">
+                            <button type="button" class="btn schedule-footer btn-success" (click)="save()">
+                                    Save <img src="./assets/save.png">
+                                </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

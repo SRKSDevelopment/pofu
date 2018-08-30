@@ -25,6 +25,7 @@ export class DeleteInstitutionComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges) {
     if (changes['institution']) {
       this.institution = changes['institution'].currentValue;
+      console.log(this.institution);
       this.institutionName = this.institution.name;
     }
   }

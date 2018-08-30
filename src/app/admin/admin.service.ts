@@ -283,6 +283,9 @@ export class AdminService {
     this.url = this.host + '/Roles/ArchiveRole?roleId=';
     return this.http.get(this.url + data);
   }
+  getOrganizationParamId() {
+    return this.appService.getParam('organizationId');
+  }
   getOrganisation() { 
     this.appService.showLoader(true);
     this.url = this.host+'/Organization/ViewMultipleOrganization';

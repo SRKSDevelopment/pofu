@@ -3357,3 +3357,8 @@ h6.master-header-sub {
   background: #fff;
   line-height: 24px;
 }
+
+.ng-select-dropdown-outer.bottom {
+  z-index: 991!important;
+  position: absolute!important;
+}

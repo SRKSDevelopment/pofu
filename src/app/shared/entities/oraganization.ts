@@ -1,12 +1,12 @@
 export class Organization{
-    organizationId: 0;
+    organizationId: any;
     organizationName: string;
     location: string;
     phoneNumber: string;
     emailId: string;
     status: true;
-    stateId: 0;
-    cityId: 0;
-    pincodeId: 0;
+    stateId: any;
+    cityId: any;
+    pincodeId: any;
     isActive: boolean = true;
 }

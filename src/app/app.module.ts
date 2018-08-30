@@ -12,12 +12,9 @@ import { AdminModule } from './admin/admin.module';
 import { HashLocationStrategy, LocationStrategy,PathLocationStrategy } from '@angular/common';
 // import { NgxSlidesModule } from 'ngx-slides'
 
-
-
-
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
 

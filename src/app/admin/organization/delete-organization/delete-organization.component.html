@@ -1,0 +1,15 @@
+<div class="modal-header">
+        <h5 class="modal-title">
+           Delete Organization
+        </h5>
+    </div>
+    
+    <div class="modal-body">
+      
+            <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete {{organizationName}}?</div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="modal-footer clearfix">
+        <button type="button" class="btn schedule-footer btn-success" (click)="deleteOrganization()">Yes <img src="./assets/save.png"></button>
+        <button type="button" class="btn schedule-footer btn-danger" (click)="onClose()">Close <img src="../assets/delete.png" class="save-tick-img"></button>
+    </div>
