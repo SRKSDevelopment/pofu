@@ -35,7 +35,7 @@ export class EditStateComponent implements OnInit {
   }
   //to update the country
  save(){
-    this.adminservice.saveCountry(this.state).subscribe((data: any) => {
+    this.adminservice.saveState(this.state).subscribe((data: any) => {
       console.log(data);
        console.log(this.state);
       if(data.isStatus === false){

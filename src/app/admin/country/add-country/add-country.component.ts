@@ -12,7 +12,7 @@ import { AlertType } from '../../../shared/alerts/_models/alert';
 })
 export class AddCountryComponent implements OnInit {  
   //myForm: any = CountryForm.init();
-  @Input() country:Country = new Country();
+  country:Country = new Country();
   errorMsg:boolean = false;
   //event emmiter
   @Output() close: EventEmitter<any> = new EventEmitter();
