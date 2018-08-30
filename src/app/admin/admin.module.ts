@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { Routes, RouterModule,PreloadAllModules } from '@angular/router';
@@ -40,6 +40,7 @@ import { EditRoleComponent } from './role/edit-role/edit-role.component';
 import { AddRoleComponent } from './role/add-role/add-role.component';
 import { DeleteRoleComponent } from './role/delete-role/delete-role.component';
 import { AdminService } from './admin.service';
+import { ViewOrganizationComponent } from './organization/view-organization/view-organization.component';
 
 
 
@@ -62,7 +63,8 @@ const routes: Routes = [
     { path: 'view-course', component:ViewCourseComponent},
     { path: 'view-instituion', component:ViewInstitutionComponent},
     { path: 'view-universities', component:ViewUniversitiesComponent},
-    { path: 'view-roles', component:ViewRoleComponent}
+    { path: 'view-roles', component:ViewRoleComponent},
+    { path: 'view-organization', component:ViewOrganizationComponent}
 ];
 
 @NgModule({
@@ -78,7 +80,7 @@ const routes: Routes = [
   ViewCityComponent,EditCityComponent,AddCityComponent,DeleteCityComponent,ViewPincodeComponent,EditPincodeComponent,AddPincodeComponent,DeletePincodeComponent
   ,ViewCourseComponent,AddCourseComponent,EditCourseComponent,DeleteCourseComponent,ViewInstitutionComponent,EditInstitutionComponent,AddInstitutionComponent,
   DeleteInstitutionComponent,ViewUniversitiesComponent,EditUniversitiesComponent,AddUniversitiesComponent,DeleteUniversitiesComponent,ViewRoleComponent,EditRoleComponent,
-  AddRoleComponent,DeleteRoleComponent],
+  AddRoleComponent,DeleteRoleComponent, ViewOrganizationComponent],
   exports: [RouterModule],
 })
 export class AdminModule { }
