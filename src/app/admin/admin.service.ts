@@ -283,4 +283,26 @@ export class AdminService {
     this.url = this.host + '/Roles/ArchiveRole?roleId=';
     return this.http.get(this.url + data);
   }
+  getOrganisation() { 
+    this.appService.showLoader(true);
+    this.url = this.host+'/Organization/ViewMultipleOrganization';
+    return this.http.get(this.url);
+  }
+  //to get the particular organisation by id from api 
+  getOrganizationData(data: any) {
+    this.url = this.host+'/Organization/ViewOrganizationById?organizationId=';
+    return this.http.get(this.url+ data);
+  }
+
+  //to delete organisation
+  deleteOrganizationData(data: any) {
+    this.url = this.host+'/Organization/DeleteOrganization?organizationId=';
+    return this.http.get(this.url+ data);
+  }
+  // to save the organisation
+  saveOrganization(data:any){
+    this.appService.showLoader(true);
+    this.url = this.host+'/Organization/AddAndEditOrganization';
+    return this.http.post(this.url, data);
+  }
 }
