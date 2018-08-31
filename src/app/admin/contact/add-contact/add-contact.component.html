@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="c-body">
+            <div class="c-head">Add Contact</div>
+            <div class="c-b form-horizontal form-group">
+                <div class="col-sm-6">
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Contact Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" [(ngModel)]="contact.contactName">
+                        </div>
+                    </div>
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">User Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" [(ngModel)]="contact.userName">
+                        </div>
+                    </div>
+                   
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Phone No.</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" [(ngModel)]="contact.phoneNumber">
+                        </div>
+                    </div>
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Email ID</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" [(ngModel)]="contact.emailId">
+                        </div>
+                    </div>
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Password</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" [(ngModel)]="contact.password">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                        <div class="row p-b-10">
+                                <label class="control-label col-sm-3">AdId</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" [(ngModel)]="contact.adId">
+                                </div>
+                            </div>
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Select Organization</label>
+                        <div class="col-sm-8">
+                            <ng-select
+                                [items]="organizations"
+                                class="ng-select"
+                                [(ngModel)]="contact.organizationId"
+                                [ngModelOptions]="{standalone: true}"
+                                bindLabel="organizationName"
+                                bindValue="organizationId"
+                                placeholder="Select Organization"
+                                required
+                            >
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Select Role</label>
+                        <div class="col-sm-8">
+                            <ng-select
+                                [items]="roles"
+                                class="ng-select"
+                                [(ngModel)]="contact.roleId"
+                                [ngModelOptions]="{standalone: true}"
+                                bindLabel="roleName"
+                                bindValue="id"
+                                placeholder="Select RoleCity"
+                                required
+                                
+                            >
+                            </ng-select>
+                        </div>
+                    </div>
+                 
+                    <div class="row p-b-10">
+                        <label class="control-label col-sm-3">Is Active</label>
+                        <div class="col-sm-6">
+                            <label class="checkboxFive checkboxorg">                       
+                                <input type="checkbox" [(ngModel)]="contact.isActive" (change)="checkEvent($event)">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row p-b-10 pull-right">
+                            <button type="button" class="btn schedule-footer btn-success" (click)="save()">
+                                    Save <img src="./assets/save.png">
+                                </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

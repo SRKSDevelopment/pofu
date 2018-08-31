@@ -44,6 +44,11 @@ import { ViewOrganizationComponent } from './organization/view-organization/view
 import { AddOrganizationComponent } from './organization/add-organization/add-organization.component';
 import { EditOrganizationComponent } from './organization/edit-organization/edit-organization.component';
 import { DeleteOrganizationComponent } from './organization/delete-organization/delete-organization.component';
+import { ViewContactComponent } from './contact/view-contact/view-contact.component';
+import { EditContactComponent } from './contact/edit-contact/edit-contact.component';
+import { AddContactComponent } from './contact/add-contact/add-contact.component';
+import { DeleteContactComponent } from './contact/delete-contact/delete-contact.component';
+
 
 //routing pathes 
 
@@ -60,7 +65,10 @@ const routes: Routes = [
     { path: 'view-roles', component:ViewRoleComponent},
     { path: 'view-organization', component:ViewOrganizationComponent},
     { path: 'add-organization', component:AddOrganizationComponent},
-    { path: 'edit-organization', component:EditOrganizationComponent}
+    { path: 'edit-organization', component:EditOrganizationComponent},
+    { path: 'view-contact', component:ViewContactComponent},
+    { path: 'add-contact', component:AddContactComponent},
+    { path: 'edit-contact', component:EditContactComponent}
 ];
 
 @NgModule({
@@ -76,7 +84,8 @@ const routes: Routes = [
   ViewCityComponent,EditCityComponent,AddCityComponent,DeleteCityComponent,ViewPincodeComponent,EditPincodeComponent,AddPincodeComponent,DeletePincodeComponent
   ,ViewCourseComponent,AddCourseComponent,EditCourseComponent,DeleteCourseComponent,ViewInstitutionComponent,EditInstitutionComponent,AddInstitutionComponent,
   DeleteInstitutionComponent,ViewUniversitiesComponent,EditUniversitiesComponent,AddUniversitiesComponent,DeleteUniversitiesComponent,ViewRoleComponent,EditRoleComponent,
-  AddRoleComponent,DeleteRoleComponent, ViewOrganizationComponent, AddOrganizationComponent, EditOrganizationComponent, DeleteOrganizationComponent],
+  AddRoleComponent,DeleteRoleComponent, ViewOrganizationComponent, AddOrganizationComponent, EditOrganizationComponent, DeleteOrganizationComponent,ViewContactComponent,
+  EditContactComponent,AddContactComponent,DeleteContactComponent],
   exports: [RouterModule],
 })
 export class AdminModule { }

@@ -308,4 +308,29 @@ export class AdminService {
     this.url = this.host+'/Organization/AddAndEditOrganization';
     return this.http.post(this.url, data);
   }
+  getContactParamId() {
+    return this.appService.getParam('contactId');
+  }
+  getContact() { 
+    this.appService.showLoader(true);
+    this.url = this.host+'/Contacts/ViewMultipleContact';
+    return this.http.get(this.url);
+  }
+  //to get the particular organisation by id from api 
+  getContactData(data: any) {
+    this.url = this.host+'/Contacts/ViewContactById?id=';
+    return this.http.get(this.url+ data);
+  }
+
+  //to delete organisation
+  deleteContactData(data: any) {
+    this.url = this.host+'/Contacts/DeleteContact?contactId=';
+    return this.http.get(this.url+ data);
+  }
+  // to save the organisation
+  saveContact(data:any){
+    this.appService.showLoader(true);
+    this.url = this.host+'/Contacts/AddAndEditContact';
+    return this.http.post(this.url, data);
+  }
 }
