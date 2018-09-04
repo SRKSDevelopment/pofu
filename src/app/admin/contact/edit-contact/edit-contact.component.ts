@@ -18,7 +18,8 @@ export class EditContactComponent implements OnInit {
   organizations:any=[];
   roles:any=[];
     paramId:any;
-
+    internal:boolean = false;
+    vendor:boolean = false;
 
   constructor(private alertService:AlertService,private adminService :AdminService, private appService: AppService) {
     //OrganizationForm.edit(this.myForm);
@@ -46,13 +47,16 @@ export class EditContactComponent implements OnInit {
   getContactData(data){
     this.adminService.getContactData(data).subscribe((data:any)=>{
   this.contact = data.response
+  delete this.contact.organizationName
+  console.log(this.contact)
     })
   }
   checkEvent($event){
     console.log($event);
   }
   save(data){
-    this.adminService.saveOrganization(this.contact).subscribe((data: any) => {
+
+    this.adminService.saveContact(this.contact).subscribe((data: any) => {
     console.log(this.contact)
     if(data.isStatus === false){
         this.alertService.alert(AlertType.Error,data.response)
@@ -71,4 +75,15 @@ export class EditContactComponent implements OnInit {
     return true;
 
   }
+
+  // onChange($event){
+  //   console.log($event);
+  //   if($event.organizationId == 4){
+  //     this.internal = true;
+  //     this.vendor = false;
+  //   }else{
+  //     this.internal = false;
+  //     this.vendor = true;
+  //   }
+  // }
 }

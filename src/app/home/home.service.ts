@@ -32,10 +32,42 @@ export class HomeService {
     return this.http.get(this.url + data);
   }
 
+  //View All Stages
+  ViewAllStages(data: any) {
+    this.url = this.host + '/POFUStatusReasonDetailsController/ViewAllStageForCandidateForAddingStageBetween?candidateId=';
+    return this.http.get(this.url + data);
+  }
+
+   //ViewCandidateDetail
+   ViewCandidateDetail(data: any) {
+    this.url = this.host + '/Candidate/ViewCandidateDetailsById?candidateId=';
+    return this.http.get(this.url + data);
+  }
+
   //View all Candidates
   addStatusModal(data){
     this.appService.showLoader(true);
     this.url = this.host+'/POFUStatusReasonDetailsController/AddPOFUStatusReasonDetails';
+    return this.http.post(this.url, data);
+  }
+
+   //Add Stage
+   addStage(data){
+    this.appService.showLoader(true);
+    this.url = this.host+'/POFUStatusReasonDetailsController/AddPOFUStatusReasonDetailsInMiddle';
+    return this.http.post(this.url, data);
+  }
+
+  //Add and Edit Note
+  addNote(data){
+    this.appService.showLoader(true);
+    this.url = this.host+'/Note/AddAndEdiNote';
+    return this.http.post(this.url, data);
+  }
+
+  //ViewAllNoteDetails
+  ViewAllNoteDetails(data: any) {
+    this.url = this.host + '/Note/ViewMultipleNote';
     return this.http.post(this.url, data);
   }
 }

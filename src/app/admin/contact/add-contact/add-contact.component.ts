@@ -17,7 +17,8 @@ export class AddContactComponent implements OnInit {
   response:any=[];
   organizations:any=[];
   roles:any=[]
-
+  internal:boolean = false;
+  vendor:boolean = false;
 
   constructor(private alertService:AlertService,private adminService :AdminService, private appService: AppService) {
     //OrganizationForm.edit(this.myForm);
@@ -31,13 +32,13 @@ export class AddContactComponent implements OnInit {
   getRoles(){
     this.adminService.getRole().subscribe((data: any) => {
       this.roles = data.response;
-    // console.log(this.states)
+      console.log(this.roles)
     });
   }
   getOrganization(){
     this.adminService.getOrganisation().subscribe((data: any) => {
       this.organizations = data.response;
-    // console.log(this.cities)
+    console.log(this.organizations)
     });
   }
 
@@ -45,7 +46,7 @@ export class AddContactComponent implements OnInit {
     console.log($event);
   }
   save(data){
-    this.adminService.saveOrganization(this.contact).subscribe((data: any) => {
+    this.adminService.saveContact(this.contact).subscribe((data: any) => {
     console.log(this.contact)
     if(data.isStatus === false){
         this.alertService.alert(AlertType.Error,data.response)
@@ -63,5 +64,15 @@ export class AddContactComponent implements OnInit {
     }
     return true;
 
+  }
+  onChange($event){
+    console.log($event);
+    if($event.organizationId == 4){
+      this.internal = true;
+      this.vendor = false;
+    }else{
+      this.internal = false;
+      this.vendor = true;
+    }
   }
 }

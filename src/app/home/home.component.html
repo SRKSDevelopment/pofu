@@ -1,81 +1,86 @@
 <div class="container-fluid">
     <div class="row">
-        <section>
+        <section class="m-t-14">
             <div class="col-sm-2 form-horizontal" style="padding: 0;">
-                <div class="card" style="height: 518px;">
-                    <div class="form-group">
-                        <div class="row">
-                            <label class="control-label col-sm-3">From</label>
-                            <div class="col-sm-6" style="padding: 0;">
-                                <div class="input-group date">
-                                    <input
-                                        #dp="bsDatepicker"
-                                        bsDatepicker
-                                        [(ngModel)]="fromDate"
-                                        class="form-control filter-date text-center"
-                                        style="padding: 0;"
-                                        [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY'}"
-                                    >
-                                </div>
-                            </div>
+                <div class="card-right" style="height: 518px;">
+                    <div class="card-right-body">
+                        <div class="right-header header-color" style="margin-bottom: 18px;">
+                            <h4 class="cod-h4">Candidate Filter</h4>
                         </div>
-                        <div class="row">
-                            <label class="control-label col-sm-3">To</label>
-                            <div class="col-sm-6" style="padding: 0;">
-                                <div class="input-group date">
-                                    <input
-                                        #dp="bsDatepicker"
-                                        bsDatepicker
-                                        [(ngModel)]="fromDate"
-                                        class="form-control filter-date text-center"
-                                        [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY'}"
-                                    >
-                                </div>
-                            </div>
-                            <div class="col-sm-1">
-                                <button class="search-btn btn">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                            <!-- <div class="col-sm-1">
-                                <button class="search-btn btn"><i class="fa fa-search"></i></button>
-                            </div> -->
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <span class="cstatus">Call Status:</span>
-                            </div>
-                            <div *ngFor="let item of statusName">
-                                <div class="col-sm-12">
-                                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
-                                        <label class="btn active">
-                                            <input type="radio" name="gender1" checked>
-                                            <i class="fa fa-circle-o"></i>
-                                            <i class="fa fa-dot-circle-o"></i>
-                                            <span>{{item.statusName}}</span>
-                                        </label>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="control-label col-sm-3">From</label>
+                                <div class="col-sm-6" style="padding: 0;">
+                                    <div class="input-group date">
+                                        <input
+                                            #dp="bsDatepicker"
+                                            bsDatepicker
+                                            [(ngModel)]="fromDate"
+                                            class="form-control filter-date text-center"
+                                            style="padding: 0;"
+                                            [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY'}"
+                                        >
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row" style="padding-top: 10px;">
-                            <div class="col-sm-12">
-                                <div class="input-group add-on">
-                                    <input
-                                        class="form-control"
-                                        placeholder="Search Name, Phone Number"
-                                        name="srch-term"
-                                        id="srch-term"
-                                        type="text"
-                                        [(ngModel)]="iFilter"
-                                    >
-                                    <div class="input-group-btn">
-                                        <button
-                                            class="btn btn-default"
-                                            type="submit"
+                            <div class="row">
+                                <label class="control-label col-sm-3">To</label>
+                                <div class="col-sm-6" style="padding: 0;">
+                                    <div class="input-group date">
+                                        <input
+                                            #dp="bsDatepicker"
+                                            bsDatepicker
+                                            [(ngModel)]="fromDate"
+                                            class="form-control filter-date text-center"
+                                            [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY'}"
                                         >
-                                            <i class="fa fa-search"></i>
-                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1">
+                                    <button class="search-btn btn">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                                <!-- <div class="col-sm-1">
+                                    <button class="search-btn btn"><i class="fa fa-search"></i></button>
+                                </div> -->
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <span class="cstatus">Call Status:</span>
+                                </div>
+                                <div *ngFor="let item of statusName">
+                                    <div class="col-sm-12">
+                                        <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                            <label class="btn active">
+                                                <input type="radio" name="gender1" checked>
+                                                <i class="fa fa-circle-o"></i>
+                                                <i class="fa fa-dot-circle-o"></i>
+                                                <span>{{item.statusName}}</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top: 10px;">
+                                <div class="col-sm-12">
+                                    <div class="input-group add-on">
+                                        <input
+                                            class="form-control"
+                                            placeholder="Search Name, Phone Number"
+                                            name="srch-term"
+                                            id="srch-term"
+                                            type="text"
+                                            [(ngModel)]="iFilter"
+                                        >
+                                        <div class="input-group-btn">
+                                            <button
+                                                class="btn btn-default"
+                                                type="submit"
+                                            >
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -85,391 +90,425 @@
             </div>
             <div class="col-sm-8" style="padding: 0 4px;">
                 <div class="card-center-border">
-                    <div class="card-center">
-                        <div class="table-responsive tabley-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr class="tooltip-new">
-                                        <th (click)="sort('taggedLOB')"><span class="drill-header" tooltip="Tagged LOB">TL</span><span *ngIf="key !='taggedLOB'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='taggedLOB'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('CVID')"><span class="drill-header">CV ID</span><span *ngIf="key !='CVID'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='CVID'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('firstName')"><span class="drill-header" tooltip="First Name">FN</span><span *ngIf="key !='firstName'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='firstName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('middleName')"><span class="drill-header" tooltip="Middle Name">MN</span><span *ngIf="key !='middleName'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='middleName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('lastName')"><span class="drill-header" tooltip="Last Name">LN</span><span *ngIf="key !='lastName'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='lastName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('offerDateIST')"><span class="drill-header" tooltip="Offer Date">OD</span><span *ngIf="key !='offerDateIST'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='offerDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('offerAcceptDateIST')"><span class="drill-header" tooltip="Offer Accept Date">OAD</span><span *ngIf="key !='offerAcceptDateIST'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='offerAcceptDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('expectedJoiningDateist')"><span class="drill-header" tooltip="Expected Joining Date">EJD</span><span *ngIf="key !='expectedJoiningDateist'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='expectedJoiningDateist'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('expectedJoiningMonth')"><span class="drill-header" tooltip="Expected Joining Month">EJM</span><span *ngIf="key !='expectedJoiningMonth'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='expectedJoiningMonth'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('fulfillmentMonth')"><span class="drill-header" tooltip="Fulfillment Month">FM</span><span *ngIf="key !='fulfillmentMonth'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='FulfillmentMonth'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('targetFulfillmentRoundUp')"><span class="drill-header" tooltip="Target Fulfillment RoundUp">TFR</span><span *ngIf="key !='targetFulfillmentRoundUp'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='targetFulfillmentRoundUp'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('actualJoiningDateIST')"><span class="drill-header" tooltip="Actual Joining Date">AJD</span><span *ngIf="key !='actualJoiningDateIST'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='actualJoiningDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('sapCode')"><span class="drill-header" tooltip="SAP Code">SC</span><span *ngIf="key !='sapCode'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='sapCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('source')"><span class="drill-header">Source</span><span *ngIf="key !='source'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='source'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('sourceDetails')"><span class="drill-header" tooltip="Source Details">SD</span><span *ngIf="key !='sourceDetails'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='sourceDetails'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('agencyCode')"><span class="drill-header" tooltip="Agency Code">AC</span><span *ngIf="key !='agencyCode'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='agencyCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('agencyName')"><span class="drill-header" tooltip="Agency Name">AN</span><span *ngIf="key !='agencyName'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='agencyName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('sourceMailID')"><span class="drill-header" tooltip="Source MailID">SM</span><span *ngIf="key !='sourceMailID'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='sourceMailID'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('emailAddress')"><span class="drill-header">Email</span><span *ngIf="key !='emailAddress'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='emailAddress'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('contactNumber')"><span class="drill-header" tooltip="Contact Number">CN</span><span *ngIf="key !='contactNumber'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='contactNumber'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('country')"><span class="drill-header">Country</span><span *ngIf="key !='country'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='country'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('nationality')"><span class="drill-header">Nationality</span><span *ngIf="key !='nationality'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='nationality'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('gender')"><span class="drill-header">Gender</span><span *ngIf="key !='gender'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='gender'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('TEX')"><span class="drill-header">TEX</span><span *ngIf="key !='TEX'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='TEX'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('REX')"><span class="drill-header">REX</span><span *ngIf="key !='REX'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='REX'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('previousOrganizationName')"><span class="drill-header" tooltip="Previous Organization Name">PON</span><span *ngIf="key !='previousOrganizationName'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='previousOrganizationName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('job')"><span class="drill-header">Job</span><span *ngIf="key !='job'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='job'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('jobFamily')"><span class="drill-header" tooltip="Job Family">JF</span><span *ngIf="key !='jobFamily'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='jobFamily'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('primarySkill')"><span class="drill-header" tooltip="Primary Skill">PS</span><span *ngIf="key !='primarySkill'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='primarySkill'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('secondarySkill')"><span class="drill-header" tooltip="Secondary Skill">SS</span><span *ngIf="key !='secondarySkill'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='secondarySkill'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('domainForInfra')"><span class="drill-header">Domain</span><span *ngIf="key !='domainForInfra'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='domainForInfra'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('subDomainForInfra')"><span class="drill-header">SubDomain</span><span *ngIf="key !='subDomainForInfra'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='subDomainForInfra'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('eBand')"><span class="drill-header" tooltip="E Band">EB</span><span *ngIf="key !='eBand'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='eBand'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('eSubBad')"><span class="drill-header" tooltip="E Sub Band">ESB</span><span *ngIf="key !='eSubBad'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='eSubBad'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('designation')"><span class="drill-header">Designation</span><span *ngIf="key !='designation'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='designation'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('designation2')"><span class="drill-header">Designation2</span><span *ngIf="key !='designation2'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='designation2'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('tLevel')"><span class="drill-header" tooltip="T Level">TL</span><span *ngIf="key !='tLevel'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='tLevel'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('joiningLocation')"><span class="drill-header" tooltip="Joining Location">JL</span><span *ngIf="key !='joiningLocation'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='joiningLocation'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('personalArea')"><span class="drill-header" tooltip="Personal Area">PA</span><span *ngIf="key !='personalArea'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='personalArea'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('personalSubArea')"><span class="drill-header" tooltip="Personal Sub Area">PSA</span><span *ngIf="key !='personalSubArea'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='personalSubArea'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('joiningL1')"><span class="drill-header" tooltip="Joining L1">JL1</span><span *ngIf="key !='joiningL1'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='joiningL1'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('joiningL2')"><span class="drill-header" tooltip="Joining L2">JL2</span><span *ngIf="key !='joiningL2'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='joiningL2'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('joiningL3')"><span class="drill-header" tooltip="Joining L3">JL3</span><span *ngIf="key !='joiningL3'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='joiningL3'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('joiningL4')"><span class="drill-header" tooltip="Joining L4">JL4</span><span *ngIf="key !='joiningL4'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='joiningL4'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('employeeGroup')"><span class="drill-header" tooltip="Employee Group">EG</span><span *ngIf="key !='employeeGroup'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='employeeGroup'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('accountManager')"><span class="drill-header" tooltip="Account Manager">AM</span><span *ngIf="key !='accountManager'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='accountManager'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('billingDateIST')"><span class="drill-header" tooltip="Billing Date">BD</span><span *ngIf="key !='billingDateIST'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='billingDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('billingType')"><span class="drill-header" tooltip="Billing Type">BT</span><span *ngIf="key !='billingType'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='billingType'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('customerName')"><span class="drill-header" tooltip="Customer Name">CN</span><span *ngIf="key !='customerName'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='customerName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('projectName')"><span class="drill-header" tooltip="Project Name">PN</span><span *ngIf="key !='projectName'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='projectName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('expectedClosureDateIST')"><span class="drill-header" tooltip="Expected Closure Date">ECD</span><span *ngIf="key !='expectedClosureDateIST'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='expectedClosureDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('requisitionDateIST')"><span class="drill-header" tooltip="Requisition Date">RD</span><span *ngIf="key !='requisitionDateIST'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='requisitionDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('reportingManager')"><span class="drill-header" tooltip="Reporting Manager">RM</span><span *ngIf="key !='reportingManager'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='reportingManager'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('requisitionSource')"><span class="drill-header" tooltip="Requisition Source">RS</span><span *ngIf="key !='requisitionSource'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='requisitionSource'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('tagManager')"><span class="drill-header">TAGManager</span><span *ngIf="key !='tagManager'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='tagManager'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('recruiter')"><span class="drill-header">Recruiter</span><span *ngIf="key !='recruiter'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='recruiter'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('recruiter_Ack')"><span class="drill-header">Recruiter_Ack</span><span *ngIf="key !='recruiter_Ack'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='recruiter_Ack'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('canbehiredRehireNew')"><span class="drill-header" tooltip="Canbehired Rehire New">CRN</span><span *ngIf="key !='canbehiredRehireNew'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='canbehiredRehireNew'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('tagExecutiveAssignDateIST')"><span class="drill-header" tooltip="TAG Executive Assign Date">TEAD</span><span *ngIf="key !='tagExecutiveAssignDateIST'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='tagExecutiveAssignDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('tagManagerAssignDateIST')"><span class="drill-header" tooltip="TAG Manager Assign Date">TMAD</span><span *ngIf="key !='tagManagerAssignDateIST'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='tagManagerAssignDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('srNumber')"><span class="drill-header" tooltip="SR Number">SRN</span><span *ngIf="key !='srNumber'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='srNumber'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('autoreqID')"><span class="drill-header" tooltip="Autoreq ID">AID</span><span *ngIf="key !='autoreqID'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='autoreqID'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('srStatus')"><span class="drill-header" tooltip="SR Status">SRS</span><span *ngIf="key !='srStatus'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='srStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('joiningStatus')"><span class="drill-header" tooltip="Joining Status">JS</span><span *ngIf="key !='joiningStatus'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='joiningStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('hrStatus')"><span class="drill-header" tooltip="HR Status">HRS</span><span *ngIf="key !='hrStatus'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='hrStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('homephone')"><span class="drill-header" tooltip="Home Phone">HP</span><span *ngIf="key !='homephone'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='homephone'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('otherPhone')"><span class="drill-header" tooltip="Other Phone">OP</span><span *ngIf="key !='otherPhone'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='otherPhone'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('fullName')"><span class="drill-header" tooltip="Full Name">FN</span><span *ngIf="key !='fullName'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='fullName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('jobTitle')"><span class="drill-header" tooltip="Job Title">JT</span><span *ngIf="key !='jobTitle'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='jobTitle'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('department')"><span class="drill-header">Department</span><span *ngIf="key !='department'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='department'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('projectCode')"><span class="drill-header" tooltip="Project Code">PC</span><span *ngIf="key !='projectCode'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='projectCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('type')"><span class="drill-header">Type</span><span *ngIf="key !='type'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='type'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('trackDetail')"><span class="drill-header" tooltip="Track Detail">TD</span><span *ngIf="key !='trackDetail'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='trackDetail'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                        
-                                        <th (click)="sort('pofuRAGStatus')"><span class="drill-header" tooltip="POFU RAG Status">PRS</span><span *ngIf="key !='pofuRAGStatus'" class="glyphicon glyphicon-chevron-down"></span>
-                                        <span class="glyphicon sort-icon" *ngIf="key =='pofuRAGStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let item of data | filter : ['taggedLOB' ,'CVID','firstName','middleName','lastName','offerDateIST','offerAcceptDateIST','expectedJoiningDateist','expectedJoiningMonth','fulfillmentMonth','targetFulfillmentRoundUp','actualJoiningDateIST','sapCode','source','sourceDetails','agencyCode','agencyName','sourceMailID','emailAddress','contactNumber','country','nationality','gender','TEX','REX','previousOrganizationName','job','jobFamily','primarySkill','secondarySkill','domainForInfra','subDomainForInfra','eBand','eSubBad','designation','designation2','tLevel','joiningLocation','personalArea','personalSubArea','joiningL1','joiningL2','joiningL3','joiningL4','employeeGroup','accountManager','billingDateIST','billingType','customerName','projectName','expectedClosureDateIST','requisitionDateIST','reportingManager','requisitionSource','tagManager','recruiter','recruiter_Ack','canbehiredRehireNew','tagExecutiveAssignDateIST','tagManagerAssignDateIST','srNumber','autoreqID','srStatus','joiningStatus','hrStatus','homephone','otherPhone','fullName','jobTitle','department','projectCode','type','trackDetail','pofuRAGStatus']: iFilter |  orderBy: key : reverse | paginate: { itemsPerPage: [number], currentPage: p }" 
-                                    (click)="empDetails(item)" [ngClass]="{active: isActive(item)}">
-                                        <td class="cell-full cell-ellipsis">{{item.taggedLOB}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.cvid}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.firstName}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.middleName}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.lastName}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.offerDateIST}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.offerAcceptDateIST}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.expectedJoiningDateist}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.expectedJoiningMonth}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.fulfillmentMonth}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.targetFulfillmentRoundUp}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.actualJoiningDateIST}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.sapCode}}" placement="left">{{item.sapCode}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.source}}" placement="left">{{item.source}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.sourceDetails}}" placement="left">{{item.sourceDetails}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.agencyCode}}" placement="left">{{item.agencyCode}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.agencyName}}" placement="left">{{item.agencyName}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.sourceMailID}}" placement="left">{{item.sourceMailID}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.emailAddress}}" placement="left">{{item.emailAddress}}</td>
-                                        <td>{{item.contactNumber}}</td>
-                                        <td>{{item.country}}</td>
-                                        <td>{{item.nationality}}</td>
-                                        <td>{{item.gender}}</td>
-                                        <td>{{item.tex}}</td>
-                                        <td>{{item.rex}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.previousOrganizationName}}" placement="left">{{item.previousOrganizationName}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.job}}" placement="left">{{item.job}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.jobFamily}}" placement="left">{{item.jobFamily}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.primarySkill}}" placement="left">{{item.primarySkill}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.secondarySkill}}" placement="left">{{item.secondarySkill}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.domainForInfra}}" placement="left">{{item.domainForInfra}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.subDomainForInfra}}" placement="left">{{item.subDomainForInfra}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.eBand}}" placement="left">{{item.eBand}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.eSubBand}}" placement="left">{{item.eSubBand}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.designation}}" placement="left">{{item.designation}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.designation2}}" placement="left">{{item.designation2}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.tLevel}}" placement="left">{{item.tLevel}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.joiningLocation}}" placement="left">{{item.joiningLocation}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.personalArea}}</td>
-                                        <td>{{item.personalSubArea}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.joiningL1}}" placement="left">{{item.joiningL1}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.joiningL2}}" placement="left">{{item.joiningL2}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.joiningL3}}" placement="left">{{item.joiningL3}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.joiningL4}}" placement="left">{{item.joiningL4}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.employeeGroup}}" placement="left">{{item.employeeGroup}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.accountManager}}" placement="left">{{item.accountManager}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.billingDateIST}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.billingType}}" placement="left">{{item.billingType}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.customerName}}" placement="left">{{item.customerName}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.projectName}}" placement="left">{{item.projectName}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.expectedClosureDateIST}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.requisitionDateIST}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.reportingManager}}" placement="left">{{item.reportingManager}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.requisitionSource}}" placement="left">{{item.requisitionSource}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.tagManager}}" placement="left">{{item.tagManager}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.recruiter}}" placement="left">{{item.recruiter}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.recruiterAck}}" placement="left">{{item.recruiterAck}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.canbehiredRehireNew}}" placement="left">{{item.canbehiredRehireNew}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.tagExecutiveAssignDateIST}}</td>
-                                        <td class="cell-full cell-ellipsis">{{item.tagManagerAssignDateIST}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.srNumber}}" placement="left">{{item.srNumber}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.autoReqID}}" placement="left">{{item.autoReqID}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.srStatus}}" placement="left">{{item.srStatus}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.joiningStatus}}" placement="left">{{item.joiningStatus}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.hrStatus}}" placement="left">{{item.hrStatus}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.homePhone}}" placement="left">{{item.homePhone}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.otherPhone}}" placement="left">{{item.otherPhone}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.fullName}}" placement="left">{{item.fullName}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.jobTitle}}" placement="left">{{item.jobTitle}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.department}}" placement="left">{{item.department}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.pojectCode}}" placement="left">{{item.pojectCode}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.type}}" placement="left">{{item.type}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.trackDetail}}" placement="left">{{item.trackDetail}}</td>
-                                        <td class="cell-full cell-ellipsis" tooltip="{{item.pofuRagStatus}}" placement="left">{{item.pofuRagStatus}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <!-- <button (click)="pre()">Prev</button>
-                            <button (click)="next()">Next</button> -->
-                        </div>
-                        <div class="col-sm-offset-8 col-sm-4" style="text-align: right;">
-                            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+                    <div class="card-right">
+                        <div class="card-right-body">
+                            <div class="right-header header-color" style="margin-bottom: 12px;">
+                                <h4 class="cod-h4">View All Candidates Detail</h4>
+                            </div>
+                            <div class="table-responsive tabley-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="tooltip-new">
+                                            <th (click)="sort('taggedLOB')"><span class="drill-header" tooltip="Tagged LOB">TL</span><span *ngIf="key !='taggedLOB'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='taggedLOB'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('CVID')"><span class="drill-header">CV ID</span><span *ngIf="key !='CVID'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='CVID'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('firstName')"><span class="drill-header" tooltip="First Name">FN</span><span *ngIf="key !='firstName'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='firstName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('middleName')"><span class="drill-header" tooltip="Middle Name">MN</span><span *ngIf="key !='middleName'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='middleName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('lastName')"><span class="drill-header" tooltip="Last Name">LN</span><span *ngIf="key !='lastName'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='lastName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('offerDateIST')"><span class="drill-header" tooltip="Offer Date">OD</span><span *ngIf="key !='offerDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='offerDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('offerAcceptDateIST')"><span class="drill-header" tooltip="Offer Accept Date">OAD</span><span *ngIf="key !='offerAcceptDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='offerAcceptDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('expectedJoiningDateist')"><span class="drill-header" tooltip="Expected Joining Date">EJD</span><span *ngIf="key !='expectedJoiningDateist'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='expectedJoiningDateist'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('expectedJoiningMonth')"><span class="drill-header" tooltip="Expected Joining Month">EJM</span><span *ngIf="key !='expectedJoiningMonth'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='expectedJoiningMonth'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('fulfillmentMonth')"><span class="drill-header" tooltip="Fulfillment Month">FM</span><span *ngIf="key !='fulfillmentMonth'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='FulfillmentMonth'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('targetFulfillmentRoundUp')"><span class="drill-header" tooltip="Target Fulfillment RoundUp">TFR</span><span *ngIf="key !='targetFulfillmentRoundUp'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='targetFulfillmentRoundUp'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('actualJoiningDateIST')"><span class="drill-header" tooltip="Actual Joining Date">AJD</span><span *ngIf="key !='actualJoiningDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='actualJoiningDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('sapCode')"><span class="drill-header" tooltip="SAP Code">SC</span><span *ngIf="key !='sapCode'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='sapCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('source')"><span class="drill-header">Source</span><span *ngIf="key !='source'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='source'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('sourceDetails')"><span class="drill-header" tooltip="Source Details">SD</span><span *ngIf="key !='sourceDetails'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='sourceDetails'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('agencyCode')"><span class="drill-header" tooltip="Agency Code">AC</span><span *ngIf="key !='agencyCode'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='agencyCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('agencyName')"><span class="drill-header" tooltip="Agency Name">AN</span><span *ngIf="key !='agencyName'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='agencyName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('sourceMailID')"><span class="drill-header" tooltip="Source MailID">SM</span><span *ngIf="key !='sourceMailID'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='sourceMailID'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('emailAddress')"><span class="drill-header">Email</span><span *ngIf="key !='emailAddress'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='emailAddress'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('contactNumber')"><span class="drill-header" tooltip="Contact Number">CN</span><span *ngIf="key !='contactNumber'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='contactNumber'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('country')"><span class="drill-header">Country</span><span *ngIf="key !='country'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='country'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('nationality')"><span class="drill-header">Nationality</span><span *ngIf="key !='nationality'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='nationality'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('gender')"><span class="drill-header">Gender</span><span *ngIf="key !='gender'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='gender'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('TEX')"><span class="drill-header">TEX</span><span *ngIf="key !='TEX'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='TEX'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('REX')"><span class="drill-header">REX</span><span *ngIf="key !='REX'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='REX'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('previousOrganizationName')"><span class="drill-header" tooltip="Previous Organization Name">PON</span><span *ngIf="key !='previousOrganizationName'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='previousOrganizationName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('job')"><span class="drill-header">Job</span><span *ngIf="key !='job'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='job'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('jobFamily')"><span class="drill-header" tooltip="Job Family">JF</span><span *ngIf="key !='jobFamily'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='jobFamily'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('primarySkill')"><span class="drill-header" tooltip="Primary Skill">PS</span><span *ngIf="key !='primarySkill'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='primarySkill'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('secondarySkill')"><span class="drill-header" tooltip="Secondary Skill">SS</span><span *ngIf="key !='secondarySkill'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='secondarySkill'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('domainForInfra')"><span class="drill-header">Domain</span><span *ngIf="key !='domainForInfra'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='domainForInfra'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('subDomainForInfra')"><span class="drill-header">SubDomain</span><span *ngIf="key !='subDomainForInfra'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='subDomainForInfra'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('eBand')"><span class="drill-header" tooltip="E Band">EB</span><span *ngIf="key !='eBand'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='eBand'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('eSubBad')"><span class="drill-header" tooltip="E Sub Band">ESB</span><span *ngIf="key !='eSubBad'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='eSubBad'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('designation')"><span class="drill-header">Designation</span><span *ngIf="key !='designation'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='designation'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('designation2')"><span class="drill-header">Designation2</span><span *ngIf="key !='designation2'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='designation2'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('tLevel')"><span class="drill-header" tooltip="T Level">TL</span><span *ngIf="key !='tLevel'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='tLevel'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('joiningLocation')"><span class="drill-header" tooltip="Joining Location">JL</span><span *ngIf="key !='joiningLocation'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='joiningLocation'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('personalArea')"><span class="drill-header" tooltip="Personal Area">PA</span><span *ngIf="key !='personalArea'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='personalArea'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('personalSubArea')"><span class="drill-header" tooltip="Personal Sub Area">PSA</span><span *ngIf="key !='personalSubArea'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='personalSubArea'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('joiningL1')"><span class="drill-header" tooltip="Joining L1">JL1</span><span *ngIf="key !='joiningL1'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='joiningL1'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('joiningL2')"><span class="drill-header" tooltip="Joining L2">JL2</span><span *ngIf="key !='joiningL2'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='joiningL2'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('joiningL3')"><span class="drill-header" tooltip="Joining L3">JL3</span><span *ngIf="key !='joiningL3'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='joiningL3'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('joiningL4')"><span class="drill-header" tooltip="Joining L4">JL4</span><span *ngIf="key !='joiningL4'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='joiningL4'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('employeeGroup')"><span class="drill-header" tooltip="Employee Group">EG</span><span *ngIf="key !='employeeGroup'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='employeeGroup'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('accountManager')"><span class="drill-header" tooltip="Account Manager">AM</span><span *ngIf="key !='accountManager'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='accountManager'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('billingDateIST')"><span class="drill-header" tooltip="Billing Date">BD</span><span *ngIf="key !='billingDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='billingDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('billingType')"><span class="drill-header" tooltip="Billing Type">BT</span><span *ngIf="key !='billingType'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='billingType'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('customerName')"><span class="drill-header" tooltip="Customer Name">CN</span><span *ngIf="key !='customerName'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='customerName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('projectName')"><span class="drill-header" tooltip="Project Name">PN</span><span *ngIf="key !='projectName'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='projectName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('expectedClosureDateIST')"><span class="drill-header" tooltip="Expected Closure Date">ECD</span><span *ngIf="key !='expectedClosureDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='expectedClosureDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('requisitionDateIST')"><span class="drill-header" tooltip="Requisition Date">RD</span><span *ngIf="key !='requisitionDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='requisitionDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('reportingManager')"><span class="drill-header" tooltip="Reporting Manager">RM</span><span *ngIf="key !='reportingManager'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='reportingManager'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('requisitionSource')"><span class="drill-header" tooltip="Requisition Source">RS</span><span *ngIf="key !='requisitionSource'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='requisitionSource'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('tagManager')"><span class="drill-header">TAGManager</span><span *ngIf="key !='tagManager'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='tagManager'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('recruiter')"><span class="drill-header">Recruiter</span><span *ngIf="key !='recruiter'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='recruiter'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('recruiter_Ack')"><span class="drill-header">Recruiter_Ack</span><span *ngIf="key !='recruiter_Ack'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='recruiter_Ack'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('canbehiredRehireNew')"><span class="drill-header" tooltip="Canbehired Rehire New">CRN</span><span *ngIf="key !='canbehiredRehireNew'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='canbehiredRehireNew'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('tagExecutiveAssignDateIST')"><span class="drill-header" tooltip="TAG Executive Assign Date">TEAD</span><span *ngIf="key !='tagExecutiveAssignDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='tagExecutiveAssignDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('tagManagerAssignDateIST')"><span class="drill-header" tooltip="TAG Manager Assign Date">TMAD</span><span *ngIf="key !='tagManagerAssignDateIST'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='tagManagerAssignDateIST'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('srNumber')"><span class="drill-header" tooltip="SR Number">SRN</span><span *ngIf="key !='srNumber'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='srNumber'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('autoreqID')"><span class="drill-header" tooltip="Autoreq ID">AID</span><span *ngIf="key !='autoreqID'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='autoreqID'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('srStatus')"><span class="drill-header" tooltip="SR Status">SRS</span><span *ngIf="key !='srStatus'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='srStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('joiningStatus')"><span class="drill-header" tooltip="Joining Status">JS</span><span *ngIf="key !='joiningStatus'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='joiningStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('hrStatus')"><span class="drill-header" tooltip="HR Status">HRS</span><span *ngIf="key !='hrStatus'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='hrStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('homephone')"><span class="drill-header" tooltip="Home Phone">HP</span><span *ngIf="key !='homephone'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='homephone'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('otherPhone')"><span class="drill-header" tooltip="Other Phone">OP</span><span *ngIf="key !='otherPhone'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='otherPhone'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('fullName')"><span class="drill-header" tooltip="Full Name">FN</span><span *ngIf="key !='fullName'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='fullName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('jobTitle')"><span class="drill-header" tooltip="Job Title">JT</span><span *ngIf="key !='jobTitle'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='jobTitle'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('department')"><span class="drill-header">Department</span><span *ngIf="key !='department'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='department'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('projectCode')"><span class="drill-header" tooltip="Project Code">PC</span><span *ngIf="key !='projectCode'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='projectCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('type')"><span class="drill-header">Type</span><span *ngIf="key !='type'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='type'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('trackDetail')"><span class="drill-header" tooltip="Track Detail">TD</span><span *ngIf="key !='trackDetail'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='trackDetail'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                            
+                                            <th (click)="sort('pofuRAGStatus')"><span class="drill-header" tooltip="POFU RAG Status">PRS</span><span *ngIf="key !='pofuRAGStatus'" class="glyphicon glyphicon-chevron-down"></span>
+                                            <span class="glyphicon sort-icon" *ngIf="key =='pofuRAGStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of data | filter : ['taggedLOB' ,'CVID','firstName','middleName','lastName','offerDateIST','offerAcceptDateIST','expectedJoiningDateist','expectedJoiningMonth','fulfillmentMonth','targetFulfillmentRoundUp','actualJoiningDateIST','sapCode','source','sourceDetails','agencyCode','agencyName','sourceMailID','emailAddress','contactNumber','country','nationality','gender','TEX','REX','previousOrganizationName','job','jobFamily','primarySkill','secondarySkill','domainForInfra','subDomainForInfra','eBand','eSubBad','designation','designation2','tLevel','joiningLocation','personalArea','personalSubArea','joiningL1','joiningL2','joiningL3','joiningL4','employeeGroup','accountManager','billingDateIST','billingType','customerName','projectName','expectedClosureDateIST','requisitionDateIST','reportingManager','requisitionSource','tagManager','recruiter','recruiter_Ack','canbehiredRehireNew','tagExecutiveAssignDateIST','tagManagerAssignDateIST','srNumber','autoreqID','srStatus','joiningStatus','hrStatus','homephone','otherPhone','fullName','jobTitle','department','projectCode','type','trackDetail','pofuRAGStatus']: iFilter |  orderBy: key : reverse | paginate: { itemsPerPage: [number], currentPage: p }" 
+                                        (click)="empDetails(item)" [ngClass]="{active: isActive(item)}">
+                                            <td class="cell-full cell-ellipsis">{{item.taggedLOB}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.cvid}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.firstName}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.middleName}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.lastName}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.offerDateIST}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.offerAcceptDateIST}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.expectedJoiningDateist}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.expectedJoiningMonth}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.fulfillmentMonth}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.targetFulfillmentRoundUp}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.actualJoiningDateIST}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.sapCode}}" placement="left">{{item.sapCode}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.source}}" placement="left">{{item.source}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.sourceDetails}}" placement="left">{{item.sourceDetails}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.agencyCode}}" placement="left">{{item.agencyCode}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.agencyName}}" placement="left">{{item.agencyName}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.sourceMailID}}" placement="left">{{item.sourceMailID}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.emailAddress}}" placement="left">{{item.emailAddress}}</td>
+                                            <td>{{item.contactNumber}}</td>
+                                            <td>{{item.country}}</td>
+                                            <td>{{item.nationality}}</td>
+                                            <td>{{item.gender}}</td>
+                                            <td>{{item.tex}}</td>
+                                            <td>{{item.rex}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.previousOrganizationName}}" placement="left">{{item.previousOrganizationName}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.job}}" placement="left">{{item.job}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.jobFamily}}" placement="left">{{item.jobFamily}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.primarySkill}}" placement="left">{{item.primarySkill}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.secondarySkill}}" placement="left">{{item.secondarySkill}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.domainForInfra}}" placement="left">{{item.domainForInfra}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.subDomainForInfra}}" placement="left">{{item.subDomainForInfra}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.eBand}}" placement="left">{{item.eBand}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.eSubBand}}" placement="left">{{item.eSubBand}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.designation}}" placement="left">{{item.designation}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.designation2}}" placement="left">{{item.designation2}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.tLevel}}" placement="left">{{item.tLevel}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.joiningLocation}}" placement="left">{{item.joiningLocation}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.personalArea}}</td>
+                                            <td>{{item.personalSubArea}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.joiningL1}}" placement="left">{{item.joiningL1}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.joiningL2}}" placement="left">{{item.joiningL2}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.joiningL3}}" placement="left">{{item.joiningL3}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.joiningL4}}" placement="left">{{item.joiningL4}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.employeeGroup}}" placement="left">{{item.employeeGroup}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.accountManager}}" placement="left">{{item.accountManager}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.billingDateIST}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.billingType}}" placement="left">{{item.billingType}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.customerName}}" placement="left">{{item.customerName}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.projectName}}" placement="left">{{item.projectName}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.expectedClosureDateIST}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.requisitionDateIST}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.reportingManager}}" placement="left">{{item.reportingManager}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.requisitionSource}}" placement="left">{{item.requisitionSource}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.tagManager}}" placement="left">{{item.tagManager}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.recruiter}}" placement="left">{{item.recruiter}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.recruiterAck}}" placement="left">{{item.recruiterAck}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.canbehiredRehireNew}}" placement="left">{{item.canbehiredRehireNew}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.tagExecutiveAssignDateIST}}</td>
+                                            <td class="cell-full cell-ellipsis">{{item.tagManagerAssignDateIST}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.srNumber}}" placement="left">{{item.srNumber}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.autoReqID}}" placement="left">{{item.autoReqID}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.srStatus}}" placement="left">{{item.srStatus}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.joiningStatus}}" placement="left">{{item.joiningStatus}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.hrStatus}}" placement="left">{{item.hrStatus}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.homePhone}}" placement="left">{{item.homePhone}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.otherPhone}}" placement="left">{{item.otherPhone}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.fullName}}" placement="left">{{item.fullName}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.jobTitle}}" placement="left">{{item.jobTitle}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.department}}" placement="left">{{item.department}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.pojectCode}}" placement="left">{{item.pojectCode}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.type}}" placement="left">{{item.type}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.trackDetail}}" placement="left">{{item.trackDetail}}</td>
+                                            <td class="cell-full cell-ellipsis" tooltip="{{item.pofuRagStatus}}" placement="left">{{item.pofuRagStatus}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- <button (click)="pre()">Prev</button>
+                                <button (click)="next()">Next</button> -->
+                            </div>
+                            <div class="col-sm-offset-8 col-sm-4" style="text-align: right;">
+                                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+                            </div>
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                    <div class="card-center" style="margin: -9px 0 0px;"  *ngIf="candidateDetail==true">
-                        <div class="table-responsive tabley-responsive" style="height: 143px;">
-                            <table id="myTable1" class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Stage</th>
-                                        <th>Date</th>
-                                        <th>POFU Status</th>
-                                        <th>Updated By</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody *ngFor="let item of status">
-                                    <tr>
-                                        <td>{{item.stage}}</td>
-                                        <td>{{item.followUpDate}}</td>
-                                        <td>{{item.pofuStatus}}</td>
-                                        <td>{{item.updatedBy}}</td>
-                                        <td>
-                                            <ul class="valign tooltip-new">
-                                                <li class="action-li action-bor">
-                                                    <button class="btn btn-ini" tooltip="Call" >
-                                                        <img class="action-btn" src="./assets/telephone1.png">
-                                                    </button>
-                                                </li>
-                                                <li class="action-li">
-                                                    <button class="btn btn-ini" tooltip="Status Reason" (click)="openModal(template,item)">
-                                                        <img class="action-btn" src="./assets/chat.png">
-                                                    </button>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div class="card-right" style="margin: 7px 0 0px;"  *ngIf="candidateDetail==true">
+                        <div class="card-right-body">
+                            <div class="right-header header-color" style="margin-bottom: 2px;">
+                                <h4 class="cod-h4 col-sm-10">Candidate Detail</h4>
+                                <button class="btn" (click)="openModal2(template2)">Stage</button>
+                            </div>
+                            <div class="table-responsive tabley-responsive" style="height: 124px;">
+                                <table id="myTable1" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Stage</th>
+                                            <th>Date</th>
+                                            <th>POFU Status</th>
+                                            <th>Updated By</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody *ngFor="let item of status">
+                                        <tr>
+                                            <td>{{item.stage}}</td>
+                                            <td>{{item.followUpDate}}</td>
+                                            <td>{{item.pofuStatus}}</td>
+                                            <td>{{item.updatedBy}}</td>
+                                            <td>
+                                                <ul class="valign tooltip-new">
+                                                    <li class="action-li action-bor">
+                                                        <button class="btn btn-ini" tooltip="Call" >
+                                                            <img class="action-btn" src="./assets/telephone1.png">
+                                                        </button>
+                                                    </li>
+                                                    <li class="action-li action-bor">
+                                                        <button class="btn btn-ini" tooltip="Status Reason" (click)="openModal(template,item)">
+                                                            <img class="action-btn" src="./assets/chat.png">
+                                                        </button>
+                                                    </li>
+                                                    <li class="action-li">
+                                                        <button class="btn btn-ini" tooltip="Status Reason" (click)="staticModal1.show()" (click)="viewStageNote(item)">
+                                                            <img class="action-btn" src="./assets/note.png">
+                                                        </button>
+                                                    </li>   
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-2" style="padding: 0;">
-                <div class="card" style="height: 518px;">
-                    <div class="card-title">
-                        <h4>Candidate Offer Details</h4>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <span class="cstatus">Previous Salary: </span>
+                <div class="card-right">
+                    <div class="card-right-body">
+                        <div class="right-header header-color">
+                            <h4 class="cod-h4">Candidate Offer Details</h4>
                         </div>
-                        <div class="col-sm-12">
-                            <span class="cstatus">Current Offered: </span>
-                        </div>
-                        <div class="col-sm-12">
-                            <span class="cstatus">Experience: </span>
-                        </div>
-                        <div class="col-sm-12">
-                            <span class="cstatus">Location: </span>
-                        </div>
-                        <div class="col-sm-12">
-                            <span class="cstatus">Tier: </span>
-                        </div>
-                        <div class="col-sm-12">
-                            <span class="cstatus">Tier: </span>
+                        <div class="row">
+                            <div class="col-sm-12 text-center tooltip-new">
+                                <a class="btn-floating-new btn-sm blue-gradient" [ngClass]="{isCandiateOfferDetails : isCandiateOfferDetails == false}" tooltip="Candidate Information" (click)="openModal1(template1)"><i class="fa fa-info"></i></a>
+                                <a class="btn-floating-new btn-sm blue-gradient" [ngClass]="{isCandiateOfferDetails : isCandiateOfferDetails == false}" tooltip="Stages"><i class="fa fa-star"></i></a>
+                                <a class="btn-floating-new btn-sm blue-gradient" [ngClass]="{isCandiateOfferDetails : isCandiateOfferDetails == false}" tooltip="Note" (click)="staticModal.show()" (click)="viewNote()"><i class="fa fa-sticky-note"></i></a>
+                            </div>
                         </div>
                     </div>
+                    </div>
+                    <div class="card-right" style="height: 424px;margin-top: 16px;">
+                    <div class="card-right-body">
+                            <div class="right-header header-color">
+                                <h4 class="cod-h4">Candidate Offer Details</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <span class="cstatus">Previous Salary: </span>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span class="cstatus">Current Offered: </span>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span class="cstatus">Experience: </span>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span class="cstatus">Location: </span>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span class="cstatus">Tier: </span>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span class="cstatus">Tier: </span>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </section>
     </div>
 </div>
+
+<!-- Start Add Status -->
 <ng-template #template>
     <div class="modal-header">
         <h5 class="modal-title">
@@ -498,7 +537,6 @@
                         bindValue="statusReasonId"
                         placeholder="Select Status Reason"
                         required
-                        style="z-index: 0;"
                         >
                     </ng-select>
                 </div>
@@ -519,3 +557,340 @@
         </button>
     </div>
 </ng-template>
+<!-- End Add Status -->
+
+<!-- Start Display Candidate Information -->
+<ng-template #template1>
+    <div class="modal-header">
+        <h5 class="modal-title">
+            Candidate Details
+        </h5>
+    </div>
+    <div class="modal-body" style="height: 500px;overflow-y: auto;">
+        <div class="form-horizontal form-group">
+            <div class="row">
+                <label class="control-label col-sm-2">Tagged LOB : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.taggedLOB}}</label>
+                <label class="control-label col-sm-2">CV ID : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.cvid}}</label>
+                <label class="control-label col-sm-2">First Name : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.firstName}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Middle Name : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.middleName}}</label>
+                <label class="control-label col-sm-2">Last Name : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.lastName}}</label>
+                <label class="control-label col-sm-2">Offer Date : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.offerDateISTDTF | date: 'dd/MM/yyyy'}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Offer Accept Date : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.offerAcceptDateISTDTF | date: 'dd/MM/yyyy'}}</label>
+                <label class="control-label col-sm-2">Expected Joining Date : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.expectedJoiningDateistDTF | date: 'dd/MM/yyyy'}}</label>
+                <label class="control-label col-sm-2">Expected Joining Month: </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.expectedJoiningMonthDTF | date: 'dd/MM/yyyy'}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Fulfillment Month : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.fulfillmentMonthDTF | date: 'dd/MM/yyyy'}}</label>
+                <label class="control-label col-sm-2">Target Fulfillment Round: </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.targetFulfillmentRoundUpDTF | date: 'dd/MM/yyyy'}}</label>
+                <label class="control-label col-sm-2">Actual Joining Date : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.actualJoiningDateISTDTF | date: 'dd/MM/yyyy'}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Sap Code : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.sapCode}}</label>
+                <label class="control-label col-sm-2">Source : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.source}}</label>
+                <label class="control-label col-sm-2">Source Details : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.sourceDetails}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Agency Code : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.agencyCode}}</label>
+                <label class="control-label col-sm-2">Agency Name : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.agencyName}}</label>
+                <label class="control-label col-sm-2">Source MailID : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.sourceMailID}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Email Address : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.emailAddress}}</label>
+                <label class="control-label col-sm-2">Contact Number : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.contactNumber}}</label>
+                <label class="control-label col-sm-2">Country : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.country}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Nationality : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.nationality}}</label>
+                <label class="control-label col-sm-2">Gender : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.gender}}</label>
+                <label class="control-label col-sm-2">TEX : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.tex}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">REX : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.rex}}</label>
+                <label class="control-label col-sm-2">Previous Organization Name : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.previousOrganizationName}}</label>
+                <label class="control-label col-sm-2">Job : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.job}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Job Family : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.jobFamily}}</label>
+                <label class="control-label col-sm-2">Primary Skill : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.primarySkill}}</label>
+                <label class="control-label col-sm-2">Secondary Skill : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.secondarySkill}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Domain : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.domainForInfra}}</label>
+                <label class="control-label col-sm-2">Sub Domain : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.subDomainForInfra}}</label>
+                <label class="control-label col-sm-2">E Band : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.eBand}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">E Sub Band : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.eSubBand}}</label>
+                <label class="control-label col-sm-2">Designation : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.designation}}</label>
+                <label class="control-label col-sm-2">Designation2 : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.designation2}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">T Level : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.tLevel}}</label>
+                <label class="control-label col-sm-2">Joining Location : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.joiningLocation}}</label>
+                <label class="control-label col-sm-2">Personal Area : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.personalArea}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Personal SubArea : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.personalSubArea}}</label>
+                <label class="control-label col-sm-2">Joining L1 : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.joiningL1}}</label>
+                <label class="control-label col-sm-2">Joining L2 : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.joiningL2}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Joining L3 : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.joiningL3}}</label>
+                <label class="control-label col-sm-2">Joining L4 : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.joiningL4}}</label>
+                <label class="control-label col-sm-2">Employee Group : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.employeeGroup}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Account Manager : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.accountManager}}</label>
+                <label class="control-label col-sm-2">Billing Date : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.billingDateISTDTF | date: 'dd/MM/yyyy'}}</label>
+                <label class="control-label col-sm-2">Billing Type : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.billingType}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Customer Name : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.customerName}}</label>
+                <label class="control-label col-sm-2">Project Name : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.projectName}}</label>
+                <label class="control-label col-sm-2">Expected Closure Date : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.expectedClosureDateISTDTF | date: 'dd/MM/yyyy'}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Requisition Date : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.requisitionDateISTDTF | date: 'dd/MM/yyyy'}}</label>
+                <label class="control-label col-sm-2">Reporting Manager : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.reportingManager}}</label>
+                <label class="control-label col-sm-2">Requisition Source : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.requisitionSource}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Tag Manager : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.tagManager}}</label>
+                <label class="control-label col-sm-2">Recruiter : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.recruiter}}</label>
+                <label class="control-label col-sm-2">Recruiter Ack : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.recruiterAck}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Canbehired Rehire New : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.canbehiredRehireNew}}</label>
+                <label class="control-label col-sm-2">Tag Executive Assign Date : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.tagExecutiveAssignDateISTDTF | date: 'dd/MM/yyyy'}}</label>
+                <label class="control-label col-sm-2">Tag Manager Assign Date : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.tagManagerAssignDateISTDTF | date: 'dd/MM/yyyy'}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">SR Number : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.srNumber}}</label>
+                <label class="control-label col-sm-2">Auto Req ID : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.autoReqID}}</label>
+                <label class="control-label col-sm-2">SR Status : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.srStatus}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Joining Status : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.joiningStatus}}</label>
+                <label class="control-label col-sm-2">HR Status : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.hrStatus}}</label>
+                <label class="control-label col-sm-2">Home Phone : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.homePhone}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Other Phone : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.otherPhone}}</label>
+                <label class="control-label col-sm-2">Full Name : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.fullName}}</label>
+                <label class="control-label col-sm-2">Job Title : </label>
+                <label class="control-label col-sm-2 cell-full cell-ellipsis" style="text-align: left;" placement="left" tooltip="{{candidateBasicDetail.jobTitle}}">{{candidateBasicDetail.jobTitle}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Department : </label>
+                <label class="control-label col-sm-2 cell-full cell-ellipsis" style="text-align: left;" placement="left" tooltip="{{candidateBasicDetail.department}}">{{candidateBasicDetail.department}}</label>
+                <label class="control-label col-sm-2">Project Code : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.projectCode}}</label>
+                <label class="control-label col-sm-2">Type : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.type}}</label>
+            </div>
+            <div class="row">
+                <label class="control-label col-sm-2">Track Detail : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.trackDetail}}</label>
+                <label class="control-label col-sm-2">Pofu Rag Status : </label>
+                <label class="control-label col-sm-2" style="text-align: left;">{{candidateBasicDetail.pofuRagStatus}}</label>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<!-- End Display Candidate Information -->
+
+<!-- Start Add Stage -->
+<ng-template #template2>
+    <div class="modal-header">
+        <h5 class="modal-title">
+            Change Stage
+        </h5>
+    </div>
+    <div class="modal-body">
+        <div class="form-horizontal form-group">
+            <div class="row p-b-10">
+                <label class="control-label col-sm-3">Add After Stage : </label>
+                <div class="col-sm-6">
+                    <ng-select
+                        [items]="stageName"
+                        class="ng-select"
+                        [(ngModel)]="stageNextTo"
+                        bindLabel="stageName"
+                        bindValue="stageName"
+                        placeholder="Select Stage"
+                        required
+                        >
+                    </ng-select>
+                </div>
+            </div>
+            <div class="row p-b-10">
+                <label class="control-label col-sm-3">Date : </label>
+                <div class="col-sm-6">
+                    <input
+                        #dp="bsDatepicker"
+                        bsDatepicker
+                        [(ngModel)]="followUpDate1"
+                        class="form-control filter-date"
+                        [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY'}"
+                    >
+                </div>
+            </div>
+            <div class="row p-b-10">
+                <label class="control-label col-sm-3">Status</label>
+                <div class="col-sm-6">
+                    <ng-select
+                        [items]="statusName"
+                        class="ng-select"
+                        [(ngModel)]="pofuStatusID"
+                        (change)="getStatus($event)"
+                        bindLabel="statusName"
+                        bindValue="statusReasonId"
+                        placeholder="Select Status Reason"
+                        required
+                        >
+                    </ng-select>
+                </div>
+            </div>
+            <div class="row p-b-10">
+                <label class="control-label col-sm-3">Updated By : </label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" [(ngModel)]="updatedBy">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="modal-footer clearfix">
+        <button type="button" class="btn schedule-footer btn-success" (click)="saveStageBetween()">
+            Save <img src="./assets/save.png">
+        </button>
+        <button type="button" class="btn schedule-footer btn-danger" (click)="onClose()">
+            Close <img src="./assets/delete.png">
+        </button>
+    </div>
+</ng-template>
+<!-- End Add Stage -->
+
+<!-- Start Employee Overall Note -->
+<div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+    <div class="modal-dialog modal-full-height modal-right note-dialog">
+        <div class="modal-content note-content">
+            <div class="modal-header note-header">
+                <h5 class="modal-title">
+                    Candidate Notes
+                </h5>
+            </div>
+            <div class="modal-body note-body">
+                <div *ngFor="let item of notes" class="note-list">
+                    {{item.noteDetails}}
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center note-footer">
+                <textarea class="form-control" [(ngModel)]="noteDetails" placeholder="Add Note"></textarea>
+                <div class="text-center" style="margin-top: 10px;">
+                    <button class="btn schedule-footer btn-success" type="button" (click)="saveNote()">Save <img src="./assets/save.png"></button>
+                    <button class="btn schedule-footer btn-danger" type="button" (click)="staticModal.hide()">Close <img class="save-tick-img" src="../assets/delete.png"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Employee Overall Note -->
+
+<!-- Start Employee StageWise Note -->
+<div class="modal fade" bsModal #staticModal1="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+    <div class="modal-dialog modal-full-height modal-right note-dialog">
+        <div class="modal-content note-content">
+            <div class="modal-header note-header">
+                <h5 class="modal-title">
+                    Candidate Stagewise Notes
+                </h5>
+            </div>
+            <div class="modal-body note-body">
+                <div *ngFor="let item of stageNotes" class="note-list">
+                    {{item.noteDetails}}
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center note-footer">
+                <textarea class="form-control" [(ngModel)]="noteDetails" placeholder="Add Note"></textarea>
+                <div class="text-center" style="margin-top: 10px;">
+                    <button class="btn schedule-footer btn-success" type="button" (click)="saveStageNote()" (click)="staticModal1.hide()">Save <img src="./assets/save.png"></button>
+                    <button class="btn schedule-footer btn-danger" type="button" (click)="staticModal1.hide()">Close <img class="save-tick-img" src="../assets/delete.png"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Employee StageWise Note -->
